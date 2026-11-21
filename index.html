@@ -111,7 +111,7 @@ pre.prompt{background:var(--panel2);border:1px solid var(--border);border-radius
 /* ===== Story layout ===== */
 :root{--bg:#f6f7f9;--radius:18px}
 [data-theme="dark"]{--bg:#0c1219}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
 .topbar{display:flex;align-items:center;gap:14px;padding:10px 22px;background:color-mix(in srgb,var(--panel) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:30}
 .tb-brand{display:flex;align-items:center;gap:10px;font-size:15px;white-space:nowrap}
 .tb-brand .logo{width:34px;height:34px;border-radius:10px;background:var(--accent);color:#fff;display:grid;place-items:center}
@@ -353,12 +353,205 @@ table.ba td:nth-child(2),table.ba td.rob{white-space:nowrap}
   .dash{padding:12px}.hero4{grid-template-columns:1fr 1fr;gap:10px}.h4{padding:10px 12px}.h4v{font-size:22px}.h4 svg{display:none}
   .drow{grid-template-columns:1fr}.cmd-right{margin-left:0}.scen-pick{min-width:0;width:100%}.scen-pick .scen-desc{white-space:normal}}
 .dcard-h h2{text-transform:none;letter-spacing:-.01em;color:var(--text)}
+.aisw{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--border);background:var(--panel);border-radius:999px;padding:5px 14px 5px 5px;cursor:pointer;font:600 14px "IBM Plex Sans",sans-serif;color:var(--text)}
+.aisw .knob{width:38px;height:22px;border-radius:999px;background:var(--grid);position:relative;transition:background .2s}
+.aisw .knob::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:left .2s}
+.aisw.on{border-color:var(--accent);background:var(--accent-soft)}.aisw.on .knob{background:var(--accent)}.aisw.on .knob::after{left:19px}
+.aisw b{color:var(--muted)}.aisw.on b{color:var(--accent)}
+.cmpbar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 10px;font-size:12.5px;color:var(--muted)}
+.cmpbar button{border:1px solid var(--border);background:var(--panel);border-radius:999px;padding:5px 12px;font:600 12.5px "IBM Plex Sans",sans-serif;color:var(--muted);cursor:pointer}
+.cmpbar button.on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
+.snav{display:flex;gap:4px;background:var(--panel2);border-radius:999px;padding:4px;margin-left:8px}
+.snav a{text-decoration:none;color:var(--muted);font:600 13px "IBM Plex Sans",sans-serif;padding:6px 14px;border-radius:999px;white-space:nowrap}
+.snav a.on{background:var(--panel);color:var(--accent);box-shadow:var(--shadow)}
+.dash3{gap:0;padding-top:0}
+.screen{min-height:calc(100vh - 62px);scroll-margin-top:0;padding:26px 0 30px;display:flex;flex-direction:column;gap:14px;border-bottom:1px dashed var(--border)}
+.screen:last-of-type{border-bottom:none}
+.scr-hero{justify-content:center}
+.scr-hero .hero{max-width:1120px;width:100%;margin:0 auto}
+.scr-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}.scr-head h2{margin:0;font-size:22px;letter-spacing:-.01em}
+.step{display:inline-block;padding:4px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font:700 13px "IBM Plex Sans",sans-serif;min-width:0;height:auto}
+.next-hint{align-self:center;margin-top:6px;color:var(--accent);font:600 14px "IBM Plex Sans",sans-serif;text-decoration:none;padding:6px 14px;border-radius:999px;border:1px solid var(--border);background:var(--panel)}
+.next-hint:hover{background:var(--accent-soft)}
+#s2 .cmdbar{position:static}
+#s2 .dcard-h{align-items:flex-start}
+.dcharts .charts2{margin-top:6px}
+@media (max-width:1100px){.snav{display:none}}
+.kpi2{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.k2{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:9px 12px;box-shadow:var(--shadow)}
+.k2h{display:flex;align-items:center;gap:7px;font:600 12.5px "IBM Plex Sans",sans-serif;color:var(--muted);margin-bottom:5px}.k2h svg{width:16px;height:16px}
+.k2v{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.k2c{border-radius:9px;padding:4px 9px;background:var(--panel2);border:1px solid transparent}
+.k2c span{display:block;font-size:11px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.k2c b{font:700 20px "IBM Plex Sans",sans-serif;letter-spacing:-.01em}
+.k2c.rob b{color:var(--robot)}.k2c.man b{color:var(--muted)}
+.k2c.win{background:color-mix(in srgb,var(--ok) 12%,var(--panel));border-color:color-mix(in srgb,var(--ok) 45%,var(--border))}
+.k2c.win b{color:var(--ok)}
+@media (max-width:1000px){.kpi2{grid-template-columns:1fr 1fr}}@media (max-width:600px){.kpi2{grid-template-columns:1fr}.k2,.k2c{min-width:0}}
+#s2{gap:10px}
+.k2head{grid-column:1/-1;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-bottom:-2px}
+.k2head b{font-size:13.5px;padding:3px 11px;border-radius:999px}
+.k2head b.rob{background:color-mix(in srgb,var(--robot) 14%,var(--panel));color:var(--robot)}
+.k2head b.man{background:var(--panel2);color:var(--text)}
+.k2head i{font-style:normal;font-weight:600}
+.k2head .k2g{margin-left:auto;color:var(--ok);font-weight:600}
+.k2c span{font-size:12px!important;font-weight:700;letter-spacing:.01em}
+.k2c.rob span{color:var(--robot)!important}.k2c.man span{color:var(--text)!important;opacity:.75}
+.verdict{border-radius:18px;padding:20px 24px;background:linear-gradient(120deg,color-mix(in srgb,var(--accent) 16%,var(--panel)),var(--panel));border:1px solid color-mix(in srgb,var(--accent) 35%,var(--border));box-shadow:var(--shadow)}
+.verdict.warn{background:linear-gradient(120deg,color-mix(in srgb,var(--warn) 16%,var(--panel)),var(--panel));border-color:color-mix(in srgb,var(--warn) 40%,var(--border))}
+.verdict .vk{font:700 12.5px "IBM Plex Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.verdict .vtext{font:600 clamp(18px,2vw,23px) "IBM Plex Sans",sans-serif;line-height:1.35;margin:6px 0 14px;max-width:1100px}
+.verdict .vnums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.verdict .vn{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:12px 16px}
+.verdict .vn b{display:block;font:700 30px "IBM Plex Sans",sans-serif;letter-spacing:-.02em}
+.verdict .vn b.good{color:var(--ok)}.verdict .vn b.badv{color:var(--bad)}
+.verdict .vn span{font-size:13px;color:var(--muted)}
+.drow2>*{min-width:0}.drow2{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;align-items:stretch}
+.drow2 .ba-title{font-size:16px;display:flex;align-items:center;gap:8px}
+.drow2 table.ba{width:100%;font-size:14px}.drow2 table.ba th,.drow2 table.ba td{padding:8px 12px}
+#s5 .decide-k{font-size:12.5px}#s5 .decide-big{font-size:18px}#s5 .facts{font-size:13px}
+.aibar{display:flex;align-items:center;gap:12px;margin-top:10px;border:1px solid var(--border);border-radius:14px;padding:8px 10px 8px 14px;background:var(--panel)}
+.aib-l{font:700 12.5px "IBM Plex Sans",sans-serif;color:var(--accent);white-space:nowrap}
+.aibar .ai-card{flex:1;display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;padding:4px 8px;min-height:0;border:none;border-radius:10px}
+.aibar .ai-ico{font-size:22px;border:none;padding:0}
+.aibar .ai-card h3{font-size:14.5px;margin:0}.aibar .ai-card p{font-size:12.5px;margin:1px 0 0}
+.aibar .ai-card .btn{padding:6px 12px;font-size:13px}
+.aibar .ai-nav{margin:0;gap:6px}
+@media (max-width:900px){.drow2{grid-template-columns:1fr}.verdict .vnums{grid-template-columns:1fr}.aibar{flex-wrap:wrap}.aibar .ai-card{grid-template-columns:30px 1fr;min-width:0}.aibar .ai-card .btn{grid-column:2;justify-self:start}}
+#scr3 #s5{grid-column:auto}
+.dcharts2 .chart-title{margin-top:0}
+/* ===== Screen 1 polish ===== */
+.dhead{flex-wrap:nowrap}
+.dhead .livepill{flex:none}
+.dhead .livepill .pbar{display:block;left:10px;right:10px;bottom:2px;height:3px;border-radius:2px}
+.livepill[data-st="ok"]{background:color-mix(in srgb,var(--ok) 12%,var(--panel));border-color:color-mix(in srgb,var(--ok) 40%,var(--border));color:var(--ok)}
+.livepill[data-st="warn"]{background:color-mix(in srgb,var(--warn) 12%,var(--panel));border-color:color-mix(in srgb,var(--warn) 40%,var(--border))}
+.livepill[data-st="bad"]{background:color-mix(in srgb,var(--bad) 12%,var(--panel));border-color:color-mix(in srgb,var(--bad) 40%,var(--border));color:var(--bad)}
+.livepill[data-st="accent"]{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+@media (max-width:1250px){.dsub{display:none}}
+#scr1 .hero{position:relative;overflow:hidden;border-radius:28px;padding:40px 46px 36px;background:radial-gradient(120% 140% at 100% 0%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 55%),linear-gradient(180deg,var(--panel),color-mix(in srgb,var(--panel) 70%,var(--bg)));border:1px solid var(--border);box-shadow:0 10px 40px rgba(16,32,48,.08)}
+#scr1 .hero-art{width:min(380px,30%);top:34px;bottom:auto;right:40px;opacity:1;color:var(--accent);pointer-events:none}
+#scr1 .hero-art svg{width:100%;height:auto;opacity:.32}
+#scr1 .hero h1{max-width:min(860px,66%)}
+@media (max-width:1100px){#scr1 .hero-art{display:none}#scr1 .hero h1{max-width:none}}
+.step.big{font-size:14px;padding:5px 14px}
+#scr1 .hero h1{font-size:clamp(30px,4.3vw,54px);margin:16px 0 10px;position:relative}
+#scr1 .lead{font-size:18px;margin:0 0 16px;position:relative}
+.hfacts{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 26px;position:relative}
+.hfacts span{background:var(--panel);border:1px solid var(--border);border-radius:999px;padding:6px 13px;font-size:13px;color:var(--muted);box-shadow:var(--shadow)}
+.hfacts b{color:var(--text)}
+#scr1 .scen-cards{position:relative;gap:16px}
+#scr1 .scen-cards .sc{padding:24px 12px 20px;border-radius:20px;gap:12px;font-size:16px;background:color-mix(in srgb,var(--panel) 92%,transparent);backdrop-filter:blur(4px)}
+#scr1 .scen-cards .sc svg{width:46px;height:46px;padding:10px;border-radius:14px;background:color-mix(in srgb,var(--ic) 12%,transparent);box-sizing:border-box}
+#scr1 .scen-cards .sc small{margin-top:-8px}
+#scr1 .scen-cards .sc.active{box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+#scr1 #moreScen{position:relative}
+#scr1 .scen-desc{background:none;padding:0;margin:6px 0 0;font-size:14px;max-width:none;position:relative}
+#scr1 .hero-cta{position:relative;margin-top:28px}
+#scr1 .btn.primary.big{font-size:18px;padding:15px 34px}
+@media (max-width:820px){#scr1 .hero{padding:24px 18px;border-radius:20px}#scr1 .scen-cards .sc{padding:16px 8px;font-size:14.5px}#scr1 .scen-cards .sc svg{width:40px;height:40px;padding:8px}.hfacts span{font-size:12px}.dhead .livepill{flex:1}}
+/* ===== Realistic 3D warehouse ===== */
+.viewbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:6px 0 10px}
+.vseg{display:inline-flex;background:var(--panel2);border-radius:999px;padding:3px}
+.vseg button{border:none;background:none;border-radius:999px;padding:7px 14px;font:600 13px "IBM Plex Sans",sans-serif;color:var(--muted);cursor:pointer}
+.vseg button.on{background:var(--panel);color:var(--accent);box-shadow:var(--shadow)}
+.v3ctl{display:flex;align-items:center;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.v3ctl label{display:flex;align-items:center;gap:6px}.v3ctl input{width:110px}
+.w3wrap{position:relative;border-radius:14px;overflow:hidden;background:linear-gradient(180deg,color-mix(in srgb,var(--blue) 10%,var(--panel)),var(--panel2));cursor:grab}
+.w3wrap:active{cursor:grabbing}
+#w3{display:block;width:100%}
+.w3hint{position:absolute;right:12px;bottom:10px;font-size:12px;color:var(--muted);background:color-mix(in srgb,var(--panel) 80%,transparent);padding:4px 10px;border-radius:999px}
+@media (max-width:900px){.v3ctl input{width:80px}}
+.aibar.top{margin-top:0;background:linear-gradient(90deg,var(--accent-soft),var(--panel) 40%);border-color:color-mix(in srgb,var(--accent) 35%,var(--border));box-shadow:var(--shadow);padding:6px 10px 6px 14px}
+.aibar.top .ai-card{background:none!important;padding:2px 6px}
+.aibar.top .ai-card p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aibar.top .ai-card>div:nth-child(2){min-width:0}
+@media (max-width:900px){.aibar.top .ai-card p{white-space:normal}}
+.cuwrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px}
+.cumain{position:relative;border-radius:14px;overflow:hidden;background:linear-gradient(180deg,color-mix(in srgb,var(--blue) 9%,var(--panel)),var(--panel2));cursor:grab}
+#cu{display:block;width:100%}
+.cuside{display:flex;flex-direction:column;gap:10px}
+.custeps{display:flex;flex-direction:column;gap:6px}
+.custep{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--border);border-radius:12px;padding:8px 10px;background:var(--panel);transition:all .3s}
+.custep b{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--panel2);color:var(--muted);font-size:12.5px}
+.custep span{font-size:13px;line-height:1.35}.custep span i{display:block;font-style:normal;font-weight:700;font-size:13.5px}
+.custep.on{border-color:var(--accent);background:var(--accent-soft);box-shadow:var(--shadow)}.custep.on b{background:var(--accent);color:#fff}
+.culive{border-radius:12px;background:var(--panel2);padding:10px 12px;font-size:12.5px;line-height:1.55}
+.culive h4{margin:0 0 4px;font-size:13px;color:var(--accent)}
+@media (max-width:1000px){.cuwrap{grid-template-columns:1fr}.custeps{display:grid;grid-template-columns:1fr 1fr}}
+.scr-intro{justify-content:center}
+.intro{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.25fr);gap:28px;align-items:center;border-radius:28px;padding:34px 38px;background:radial-gradient(120% 140% at 0% 0%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 55%),var(--panel);border:1px solid var(--border);box-shadow:0 10px 40px rgba(16,32,48,.08)}
+.intro h1{font-size:clamp(28px,3.6vw,46px);letter-spacing:-.02em;line-height:1.1;margin:14px 0 10px}
+.intro .lead{font-size:17px;color:var(--muted);margin:0 0 18px}.intro .lead b{color:var(--text)}
+.icards{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.icard{display:flex;flex-direction:column;gap:2px;border:1px solid var(--border);border-radius:14px;padding:10px 14px;background:var(--panel)}
+.icard b{font-size:14.5px}.icard span{font-size:13.5px;color:var(--muted);line-height:1.4}
+.intro-how{font-size:14px;color:var(--muted);margin:4px 0 6px}.intro-how b{color:var(--text)}
+.intro .cuwrap{display:flex;flex-direction:column;gap:10px}
+.intro .custeps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.intro .custep{flex-direction:column;gap:4px;padding:8px}.intro .custep span{font-size:11.5px}.intro .custep span i{font-size:12.5px}
+@media (max-width:1000px){.intro{grid-template-columns:1fr;padding:22px 18px}.intro .custeps{grid-template-columns:1fr 1fr}}
+@media (max-width:1450px){.snav a{padding:6px 10px;font-size:12.5px}.dhead .tb-brand b{font-size:14px}}
+@media (max-width:1300px){.snav{display:none}}
+.dhead .livepill{min-width:0;max-width:340px}
+.gobox{border-radius:16px;padding:16px 18px;margin-bottom:12px;border:2px solid var(--border);background:var(--panel2)}
+.gobox.go{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 10%,var(--panel))}
+.gobox.rev{border-color:var(--warn);background:color-mix(in srgb,var(--warn) 10%,var(--panel))}
+.gobox.no{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 9%,var(--panel))}
+.go-badge{display:inline-block;font:800 22px "IBM Plex Sans",sans-serif;letter-spacing:-.01em;padding:4px 14px;border-radius:999px;color:#fff;background:var(--muted)}
+.gobox.go .go-badge{background:var(--ok)}.gobox.rev .go-badge{background:var(--warn)}.gobox.no .go-badge{background:var(--bad)}
+.go-title{font:700 18px "IBM Plex Sans",sans-serif;margin:8px 0 4px}
+.gobox ul{margin:4px 0;padding-left:20px;font-size:13.5px;line-height:1.5}
+.go-conds{margin-top:8px;border-top:1px dashed var(--border);padding-top:8px;font-size:13.5px}
+.go-note{margin-top:8px;font-size:11.5px;color:var(--muted)}
+.go-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.go-head .go-title{margin:0}
+.go-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0 8px}
+.go-stat{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:10px 12px;min-width:0}
+.go-stat b{display:block;font:800 24px "IBM Plex Sans",sans-serif;letter-spacing:-.01em;line-height:1.15}
+.go-stat span{font-size:12px;color:var(--muted)}
+.go-fix{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px;margin-top:4px}
+.go-fix i{font-style:normal;background:var(--panel);border:1px solid var(--border);border-radius:999px;padding:3px 10px}
+.go-why{margin-top:10px;font-size:13px}.go-why summary{cursor:pointer;color:var(--muted)}
+.gomore{margin-top:12px}
+@media (max-width:640px){.go-stats{grid-template-columns:1fr}.go-badge{font-size:19px}}
+
+/* screen 3: fit one screen */
+#scr3{padding:14px 0 18px;gap:12px}
+#scr3 .scr-head h2{font-size:19px}
+#scr3 .verdict{padding:12px 18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:6px 18px;align-items:center}
+#scr3 .verdict .vk{grid-column:1/-1;font-size:11.5px}
+#scr3 .verdict .vtext{font-size:17px;margin:0}
+#scr3 .verdict .vnums{gap:10px}
+#scr3 .verdict .vn{padding:8px 12px;border-radius:12px}#scr3 .verdict .vn b{font-size:23px}#scr3 .verdict .vn span{font-size:11.5px}
+.r3row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:12px;align-items:stretch}
+.r3row>.card{padding:14px 16px;margin:0}
+.r3row .dcard-h h2{font-size:15px}
+#scr3 table.ba{width:100%;font-size:13.5px}#scr3 table.ba th,#scr3 table.ba td{padding:6px 10px;font-size:13.5px}
+#scr3 .ba-title{font-size:15px;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+#scr3 #resBanner{display:none}
+#scr3 #s5{padding:14px 16px;margin:0}
+.godec{display:grid;grid-template-columns:260px minmax(0,1fr);gap:16px;align-items:stretch}
+.gobtn-wrap{display:flex;flex-direction:column;gap:8px}
+.gobtn{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;border:none;border-radius:14px;padding:14px;cursor:pointer;background:var(--accent);color:#fff;font-family:"IBM Plex Sans",sans-serif;box-shadow:var(--shadow);transition:transform .12s,filter .12s;min-height:92px}
+.gobtn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.gobtn b{font-size:20px;font-weight:800;letter-spacing:-.01em}.gobtn span{font-size:12px;opacity:.9}
+.gobtn.go{background:var(--ok)}.gobtn.rev{background:var(--warn)}.gobtn.no{background:var(--bad)}
+.gobtn.busy{opacity:.75;cursor:wait}
+#scr3 .gobox{margin:0;padding:12px 14px;display:flex;flex-direction:column;justify-content:center}
+#scr3 .gobox .go-stats{margin:0 0 8px}
+#scr3 .gobox.idle{border-style:dashed;color:var(--muted);font-size:14px}
+.acc2{display:flex;flex-wrap:wrap;gap:12px}.acc2>details{flex:1 1 380px;margin:0}.acc2>details[open]{flex-basis:100%}
+.mc3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.mc3>*{min-width:0}
+@media (max-width:900px){.r3row,.godec,.mc3{grid-template-columns:1fr}#scr3 .verdict{grid-template-columns:1fr}.gobtn{min-height:80px}}
+@media (min-width:901px) and (max-height:760px){#scr3{padding:8px 0 10px;gap:8px}#scr3 .verdict{padding:8px 14px}#scr3 .verdict .vtext{font-size:15px}#scr3 .verdict .vn{padding:5px 10px}#scr3 .verdict .vn b{font-size:19px}#scr3 table.ba th,#scr3 table.ba td{padding:4px 10px}.r3row>.card,#scr3 #s5{padding:10px 14px}.gobtn{min-height:70px}.gobtn b{font-size:17px}#scr3 .go-stat{padding:6px 10px}#scr3 .go-stat b{font-size:19px}#scr3 .acc2 summary{padding-top:8px;padding-bottom:8px}}
 </style>
 </head>
 <body data-layout="dash">
 <header class="dhead">
   <div class="tb-brand"><div class="logo" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><circle cx="17.5" cy="17.5" r="3.5"/></svg></div><b>Warehouse Robots Simulator</b></div>
   <span class="dsub">Amman fulfilment centre · simulation</span>
+  <nav class="snav" aria-label="Screens"><a href="#scr0" data-s="scr0">0 · Intro</a><a href="#scr1" data-s="scr1">1 · Choose a day</a><a href="#s2" data-s="s2">2 · Simulation</a><a href="#scr3" data-s="scr3">3 · Result</a></nav>
   <button class="livepill" id="livePill" title="Status"><span class="dot" id="statusDot"></span><span id="pillText">Ready</span><span class="pbar"><i id="prog"></i></span></button>
   <div class="tb-right">
     <button class="btn ghost" id="dataBtn" aria-label="Import or export data"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 4v16M7 4L3 8M7 4l4 4M17 20V4M17 20l-4-4M17 20l4-4"/></svg> Data</button>
@@ -366,9 +559,53 @@ table.ba td:nth-child(2),table.ba td.rob{white-space:nowrap}
   </div>
 </header>
 
-<main class="dash">
+<main class="dash dash3">
+  <!-- SCREEN 0 · introduction -->
+  <section class="screen scr-intro" id="scr0">
+    <div class="intro">
+      <div class="intro-text">
+        <span class="step big">00 · Introduction</span>
+        <h1>What is this simulation?</h1>
+        <p class="lead">This is a fulfilment centre: it stores products, and when a customer orders online it <b>picks, packs and hands the parcel to the delivery company</b>.</p>
+        <div class="icards">
+          <div class="icard"><b>⚠️ The problem</b><span>On busy days pickers walk ~30 km, make mistakes, and orders miss the courier.</span></div>
+          <div class="icard"><b>🤖 The technology</b><span>Goods-to-person robots bring whole shelves to a worker, and an AI decides who does what, in which order and when to charge.</span></div>
+          <div class="icard"><b>❓ The question</b><span>Should our Amman fulfilment centre invest in robots, and how many?</span></div>
+        </div>
+        <p class="intro-how">You will <b>choose a day</b> (normal, White Friday, power cut…), <b>watch the warehouse live</b> with and without robots, then get <b>the result and a recommendation</b>.</p>
+        <div class="hero-cta" style="justify-content:flex-start"><button class="btn primary big" id="introStart">▶ Start the simulation</button></div>
+      </div>
+      <div class="intro-visual">
+        <div class="cuwrap" id="cuwrap">
+          <div class="cumain"><canvas id="cu" height="430"></canvas><div class="w3hint">How one robot works · drag to rotate</div></div>
+          <div class="custeps" id="custeps"></div>
+          <div id="culive" hidden></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCREEN 1 · the question and the scenario -->
+  <section class="screen scr-hero" id="scr1">
+    <div class="hero">
+      <div class="hero-art" aria-hidden="true"><svg viewBox="0 0 420 240" fill="currentColor" fill-opacity=".18"><path d="M20 230V120l120-60 120 60v110" stroke="currentColor" stroke-width="3"/><path d="M60 230v-70h160v70M60 185h160M60 208h160" stroke="currentColor" stroke-width="3"/><path d="M290 230V90h110v140M310 110h20v20h-20zM350 110h20v20h-20zM310 150h20v20h-20zM350 150h20v20h-20z" stroke="currentColor" stroke-width="3"/><path d="M345 90V30l15-15 15 15v60" stroke="currentColor" stroke-width="3"/><circle cx="105" cy="214" r="9" stroke="currentColor" stroke-width="3"/><circle cx="175" cy="214" r="9" stroke="currentColor" stroke-width="3"/></svg></div>
+      <span class="step big">01 · Choose a day</span>
+      <h1 id="heroTitle">Can robots get 3,000 orders out the door today?</h1>
+      <p class="lead">Pick a day, press run, and watch the warehouse decide.</p>
+      <div class="hfacts" id="heroFacts"></div>
+      <div class="scen-cards" id="scenGrid"></div>
+      <button class="linkbtn" id="moreScen">More scenarios ▾</button>
+      <p class="scen-desc" id="scenDesc"></p>
+      <div class="hero-cta"><button class="btn primary big" id="heroRun">▶ Run the day</button><button class="linkbtn" id="heroSetup">Adjust setup</button></div>
+    </div>
+    <a class="next-hint" href="#scr2">Watch the simulation ↓</a>
+  </section>
+
+  <!-- SCREEN 2 · the simulation -->
+  <section class="screen" id="s2">
+    <div class="scr-head"><span class="step">02 · Watch the simulation</span><h2>Live warehouse floor</h2></div>
   <div class="cmdbar">
-    <div class="scen-pick"><select id="scenSel" aria-label="Scenario"></select><div class="scen-desc" id="scenDesc"></div></div>
+    <div class="scen-pick"><select id="scenSel" aria-label="Scenario"></select></div>
     <div class="cmd-play">
       <button class="btn primary" id="runBtn">▶ Run</button>
       <button class="btn" id="stepBtn">+10 min</button>
@@ -377,53 +614,55 @@ table.ba td:nth-child(2),table.ba td.rob{white-space:nowrap}
       <select id="speedSel" aria-label="Speed"><option value="6">Speed 1×</option><option value="15" selected>Speed 2×</option><option value="40">Speed 5×</option><option value="120">Speed 15×</option></select>
     </div>
     <div class="cmd-right">
+      <button class="aisw" id="aiToggle" role="switch" aria-checked="true" title="Turn the AI on or off"><span class="knob"></span><span class="aisw-t">🧠 AI <b id="aiState">ON</b></span></button>
       <button class="btn" id="setupBtn">⚙ Adjust setup</button>
       <details class="menu down" id="eventMenu"><summary class="btn">⚡ Test an event ▾</summary>
         <div class="menu-list"><button id="cmdPause">⛔ Stop all robots</button><button id="cmdBreak">🔧 Break 4 robots for an hour</button><button id="cmdTemp">➕ Call 3 temporary pickers</button><button id="cmdRush">📦 Order spike: +300 orders</button></div></details>
       <div class="dclock"><b id="dClock">08:00</b><span class="pbar"><i id="dProg"></i></span></div>
     </div>
   </div>
-
-  <div class="hero4" id="hero4"></div>
-  <div class="more-row"><button class="linkbtn" id="moreMetrics">Show more metrics ▾</button></div>
-  <div class="kpis" id="kpis" hidden></div>
-
-  <div class="dgrid">
-    <section class="card dfloor" id="s2">
-      <div class="dcard-h"><h2>🏭 Live warehouse floor</h2><div class="legend"><span><i style="background:var(--robot)"></i>Robot</span><span><i style="background:var(--bike)"></i>Picker</span><span><i style="background:var(--warn)"></i>Charging</span><span><i style="background:var(--bad)"></i>Broken</span></div></div>
+    <div class="kpi2" id="hero4"></div>
+    <div class="aibar top"><span class="aib-l">🤖 AI suggests</span><div class="ai-card" id="aiCard"></div><div class="ai-nav"><button class="btn ghost icon sm" id="aiPrev" aria-label="Previous suggestion">‹</button><span class="dots" id="aiDots"></span><button class="btn ghost icon sm" id="aiNext" aria-label="Next suggestion">›</button></div></div>
+    <section class="card dfloor">
+      <div class="dcard-h"><div class="cmpbar"><span>Compare with:</span><button class="on" data-m="manual">🚶 Manual only (no robots)</button><button data-m="ai">🧠 Same robots, AI <span id="cmpAiLbl">off</span></button></div><div class="legend"><span><i style="background:var(--robot)"></i>Robot</span><span><i style="background:var(--robot);outline:3px solid color-mix(in srgb,var(--warn) 55%,transparent)"></i>Robot carrying a shelf</span><span><i style="background:var(--bike);border-radius:50%"></i>Person (picker / station worker)</span><span><i style="background:var(--warn)"></i>Charging</span><span><i style="background:var(--bad)"></i>Broken</span><span><i style="background:var(--muted)"></i>Parked</span></div></div>
       <div class="race" id="race"></div>
-      <canvas id="floor" height="400"></canvas>
-      <div class="charts2">
-        <div><div class="chart-title"><b>Orders waiting &amp; shipped</b><span class="legend"><span><i style="background:var(--blue)"></i>Waiting</span><span><i style="background:var(--ok)"></i>Shipped</span></span></div><canvas id="backlogChart" height="150"></canvas></div>
-        <div><div class="chart-title"><b>Orders picked per hour</b><span class="legend"><span><i style="background:var(--robot)"></i>Robot zone</span><span><i style="background:var(--bike)"></i>Manual zone</span></span></div><canvas id="tputChart" height="150"></canvas></div>
+      <div class="viewbar"><div class="vseg"><button class="on" data-v="2d">▦ 2D map</button><button data-v="3d">🏭 3D warehouse</button></div>
+        <div class="v3ctl" id="v3ctl" hidden><button class="btn primary sm" id="w3open">⤢ Open the building</button><label>Rotate<input type="range" id="w3yaw" min="-180" max="180" value="-30"></label><label>Zoom<input type="range" id="w3zoom" min="70" max="160" value="100"></label><button class="btn sm" id="w3spin">⟳ Auto-rotate</button></div></div>
+      <canvas id="floor" height="350"></canvas>
+      <div class="w3wrap" id="w3wrap" hidden><canvas id="w3" height="560"></canvas><div class="w3hint" id="w3hint">Drag to rotate · scroll to zoom</div></div>
+    </section>
+    <a class="next-hint" href="#scr3">See the result &amp; decision ↓</a>
+  </section>
+
+  <!-- SCREEN 3 · result and decision -->
+  <section class="screen" id="scr3">
+    <div class="verdict" id="verdict"></div>
+    <div class="r3row">
+    <section class="card"><div class="dcard-h"><h2>📈 Orders shipped on time during the day</h2><div class="legend" id="rcLegend"></div></div><canvas id="raceChart" height="210"></canvas><p class="note" id="rcNote" style="margin:6px 0 0"></p></section>
+    <section class="card" id="s4"><div class="ba-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Before vs after <span class="note" id="resWhen"></span></div><table class="ba" id="baTable"></table><div class="banner" id="resBanner"></div></section>
+    </div>
+    <section class="card" id="s5">
+      <div class="godec">
+        <div class="gobtn-wrap"><div class="ba-title">🏆 Should we invest?</div><button class="gobtn" id="goBtn"><b>⚖️ Get the decision</b><span>GO · GO WITH CONDITIONS · NO-GO</span></button></div>
+        <div class="gobox" id="goBox"></div>
       </div>
     </section>
-    <section class="card dinsights">
-      <div class="dcard-h"><h2>💡 Insights</h2></div>
-      <div class="itabs"><button class="on" data-t="ai">✨ AI suggestions</button><button data-t="fleet">🤖 Robot fleet</button><button data-t="events">📋 Events <span id="evCount"></span></button></div>
-      <div class="ipane on" id="p_ai"><div id="aiList"></div></div>
-      <div class="ipane" id="p_fleet"><div id="battBox"></div><p class="note" id="battNote"></p></div>
-      <div class="ipane" id="p_events"><div class="alerts" id="alerts"></div></div>
-    </section>
-  </div>
-
-  <div class="drow" id="s4">
-    <section class="card"><div class="ba-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Before vs after <span class="note" id="resWhen"></span></div><table class="ba" id="baTable"></table><div class="banner" id="resBanner"></div></section>
-    <section class="card"><div class="ba-title">⏱ Where does the order time go?</div><canvas id="breakChart" height="120"></canvas><div class="note" id="breakNote" style="margin-top:6px"></div></section>
-    <section class="card" id="s5"><div class="ba-title">🏆 Should we invest?</div>
-      <div id="optSummary"></div>
-      <div class="dec-btns"><button class="btn primary" id="optBtn">Find the best setup</button><button class="btn" id="applyBest" hidden>Apply this setup</button><button class="btn" id="stressBtn">Test all scenarios</button><button class="linkbtn" id="aiBtn">Is the AI worth it?</button></div>
-    </section>
-  </div>
-  <section class="card" id="decideWrap" hidden><div id="decideMore"></div></section>
+    <div class="acc2">
+      <details class="acc"><summary><span>📉</span>More charts: how the day went &amp; where the time goes<em>›</em></summary><div class="acc-body"><div class="mc3"><div><div class="chart-title"><b>Orders waiting &amp; shipped</b><span class="legend"><span><i style="background:var(--blue)"></i>Waiting</span><span><i style="background:var(--ok)"></i>Shipped</span></span></div><canvas id="backlogChart" height="120"></canvas></div><div><div class="chart-title"><b>Orders picked per hour</b><span class="legend"><span><i style="background:var(--robot)"></i>Robot zone</span><span><i style="background:var(--bike)"></i>Manual zone</span></span></div><canvas id="tputChart" height="120"></canvas></div><div><div class="chart-title"><b>Average minutes per order</b><span class="legend"><span><i style="background:var(--muted)"></i>Waiting</span><span><i style="background:var(--blue)"></i>Picking</span><span><i style="background:var(--warn)"></i>Packing</span><span><i style="background:var(--bad)"></i>Target</span></span></div><canvas id="breakChart" height="120"></canvas><div class="note" id="breakNote" style="margin-top:6px"></div></div></div></div></details>
+      <details class="acc"><summary><span>🔧</span>More tools: target, best setup, test all days, AI value<em>›</em></summary><div class="acc-body">
+        <div id="optSummary"></div>
+        <div class="dec-btns"><button class="btn" id="optBtn">Find the best setup</button><button class="btn" id="applyBest" hidden>Apply this setup</button><button class="btn" id="stressBtn">Test all scenarios</button><button class="linkbtn" id="aiBtn">Is the AI worth it?</button></div>
+        <div id="decideWrap" hidden style="margin-top:12px"><div id="decideMore"></div></div>
+      </div></details>
+    </div>
+  </section>
 
   <!-- elements used by the scrolling layout, kept hidden here -->
-  <div hidden><h1 id="heroTitle"></h1><button id="heroRun"></button><div id="scenGrid"></div><button id="moreScen"></button><div id="chips"></div><div id="aiCard"></div><span id="aiDots"></span><button id="aiPrev"></button><button id="aiNext"></button></div>
+  <div hidden><div id="battBox"></div><p id="battNote"></p><div class="alerts" id="alerts"></div><div class="kpis" id="kpis"></div><div id="chips"></div><div id="aiList"></div><span id="evCount"></span><button id="moreMetrics"></button></div>
 </main>
 
 <footer class="foot">
   <button class="linkbtn" id="footData">⇅ Import / export data</button>
-  <button class="linkbtn" id="footGov">Governance checklist</button>
   <button class="linkbtn" id="footAbout">About the model &amp; AI prompt</button>
   <span class="note">Simulation model of a fictional Amman fulfilment centre · all figures are assumptions</span>
 </footer>
@@ -439,7 +678,7 @@ table.ba td:nth-child(2),table.ba td.rob{white-space:nowrap}
 <div class="drawer-bg" id="dataBg"><aside class="drawer wide" role="dialog" aria-label="Import and export data">
   <div class="drawer-head"><b>Data</b><button class="btn ghost icon" id="dataClose" aria-label="Close">✕</button></div>
   <h3>Import</h3>
-  <p class="note" style="margin-top:0"><b>Order log (CSV)</b>: columns <span class="mono">time, lines, express</span>, e.g. <span class="mono">09:14, 3, 0</span>. Your orders replace the random ones.</p>
+  <p class="note" style="margin-top:0"><b>Order log (CSV)</b>: columns <span class="mono">time, lines</span>, e.g. <span class="mono">09:14, 3</span>. Your orders replace the random ones.</p>
   <div class="drop" id="dropCsv">Drop a CSV here or <label class="btn sm" style="cursor:pointer">choose file<input type="file" id="csvFile" accept=".csv,text/csv" hidden></label></div>
   <div id="csvStatus" class="note" style="margin-top:6px">No order log loaded. Using randomly generated orders.</div>
   <div class="row" style="margin-top:8px"><button class="btn sm" id="sampleCsv">⬇ Sample order log</button><button class="btn sm danger" id="clearCsv" disabled>Remove imported orders</button></div>
@@ -490,11 +729,11 @@ function css(v){return getComputedStyle(document.documentElement).getPropertyVal
 
 /* ============ Model settings ============ */
 const HOURLY=[5,6,7,8,8,7,7,7,8,8,8,8,7,6]; // 08..21
-const DEFAULTS={robots:20,stations:5,pickers:4,packers:8,coverage:70,ai:1,batch:4,orders:3000,express:15,sla:90,walk:1.4,robotSpeed:1.5,pickTime:0.25,battHours:5,
+const DEFAULTS={robots:20,stations:5,pickers:4,packers:8,coverage:70,ai:1,batch:4,orders:3000,express:0,sla:90,walk:1.4,robotSpeed:1.5,pickTime:0.25,battHours:5,
   workerDay:36,robotPrice:12000,robotLife:6,robotMaint:2,stationPrice:9000,stationLife:7,aiCost:40,errorCost:8,latePenalty:1,seed:21};
 const SCENARIOS={
-  normal:{name:'Normal day',tag:'Baseline',desc:'A normal weekday: 3,000 online orders, busiest from 11:00 to 18:00. Orders must ship within 90 minutes; express orders within 45.',cfg:{},mods:{}},
-  white:{name:'White Friday',tag:'Orders ×2.5',desc:'The biggest sale of the year: 7,500 orders and twice as many express orders. Temporary staff are hired (18 packers, 8 pickers). Can the warehouse keep up?',cfg:{orders:7500,express:30,packers:18,pickers:8},mods:{}},
+  normal:{name:'Normal day',tag:'Baseline',desc:'A normal weekday: 3,000 online orders, busiest from 11:00 to 18:00. Every order must be ready for the courier within 90 minutes.',cfg:{},mods:{}},
+  white:{name:'White Friday',tag:'Orders ×2.5',desc:'The biggest sale of the year: 7,500 orders. Temporary staff are hired (18 packers, 8 pickers). Can the warehouse keep up?',cfg:{orders:7500,packers:18,pickers:8},mods:{}},
   ramadan:{name:'Ramadan nights',tag:'Evening peak',desc:'Orders peak after iftar (19:00–22:00), and workers are about 10% slower in the fasting afternoon (14:00–18:00).',cfg:{},mods:{ramadan:true}},
   breakdown:{name:'Robot breakdown',tag:'Technical',desc:'At 12:00 a software update goes wrong: 60% of the robots stop for 3 hours. Pickers in the manual zone are not affected.',cfg:{},mods:{breakdown:{at:240,pct:0.6,dur:180}}},
   power:{name:'Power cut',tag:'Infrastructure',desc:'At 13:00 the grid fails for 90 minutes. Robots and stations stop; pickers keep working by emergency light at 70% speed.',cfg:{},mods:{power:[300,390]}},
@@ -514,22 +753,7 @@ const CONTROLS=[
     {k:'batch',label:'Orders per picker trip (AI batching)',min:1,max:8,step:1,unit:''}]},
   {g:'Demand & service',open:true,items:[
     {k:'orders',label:'Orders per day',min:500,max:9000,step:100,unit:''},
-    {k:'express',label:'Express orders',min:0,max:50,step:1,unit:'%'},
-    {k:'sla',label:'Ship within (target)',min:30,max:240,step:10,unit:'min'}]},
-  {g:'Warehouse & robots',open:false,items:[
-    {k:'walk',label:'Walking per pick line (manual)',min:0.5,max:3,step:0.1,unit:'min'},
-    {k:'robotSpeed',label:'Robot speed',min:0.8,max:3,step:0.1,unit:'m/s'},
-    {k:'pickTime',label:'Time to pick one line at a station',min:0.1,max:0.6,step:0.05,unit:'min'},
-    {k:'battHours',label:'Robot battery (hours of work)',min:2,max:12,step:0.5,unit:'h'}]},
-  {g:'Costs (JOD)',open:false,items:[
-    {k:'workerDay',label:'Cost per worker position per day (2 shifts)',min:15,max:80,step:1,unit:'JOD'},
-    {k:'robotPrice',label:'Robot price',min:4000,max:40000,step:500,unit:'JOD'},
-    {k:'robotLife',label:'Robot lifetime',min:2,max:10,step:0.5,unit:'yrs'},
-    {k:'robotMaint',label:'Robot upkeep',min:0,max:10,step:0.5,unit:'JOD/day'},
-    {k:'stationPrice',label:'Pick station price',min:2000,max:30000,step:500,unit:'JOD'},
-    {k:'aiCost',label:'AI software',min:0,max:200,step:5,unit:'JOD/day'},
-    {k:'errorCost',label:'Cost of one picking mistake (return + resend)',min:0,max:30,step:0.5,unit:'JOD'},
-    {k:'latePenalty',label:'Cost of a late order',min:0,max:10,step:0.5,unit:'JOD'}]},
+    {k:'sla',label:'Ship within (target)',min:30,max:240,step:10,unit:'min'}]}
 ];
 
 /* ============ Orders ============ */
@@ -538,7 +762,7 @@ function genOrders(cfg,mods){
   const shape=mods.ramadan?[4,5,5,6,6,6,5,5,6,7,9,12,14,12]:HOURLY.slice();const tot=shape.reduce((a,b)=>a+b,0);
   for(let t=0;t<DAY;t++){const lam=cfg.orders*shape[Math.floor(t/60)]/tot/60;const n=poisson(lam,r);
     for(let i=0;i<n;i++){const u=r();const lines=u<0.35?1:u<0.6?2:u<0.76?3:u<0.87?4:u<0.94?5:u<0.98?6:8;
-      out.push({id:++id,t,lines,express:r()<cfg.express/100,zr:r(),oos:r()})}}
+      out.push({id:++id,t,lines,express:(r(),false),zr:r(),oos:r()})}}
   return out;
 }
 
@@ -618,7 +842,7 @@ function createSim(cfg,mods,imported,opts={}){
     if(AI){for(const r of s.robots.filter(r=>r.state==='work'&&r.batt<15)){const fresh=s.robots.find(x=>x.state==='idle'&&x.batt>50);if(fresh){fresh.state='work';r.state='charge';s.charges++}}}
     // dispatch: stations
     const dl=o=>o.t+(o.express?cfg.sla/2:cfg.sla);
-    // Simple control: express first, then first-come-first-served. AI: earliest deadline first, and orders that are already late go to the back so they don't make other orders late too.
+    // Simple control: first-come-first-served. AI: earliest deadline first, and orders that are already late go to the back so they don't make other orders late too.
     const prio=AI?((a,b)=>{const la=dl(a)<t+5,lb=dl(b)<t+5;return (la-lb)||(dl(a)-dl(b))}):((a,b)=>(b.express-a.express)||(a.avail-b.avail));
     if(!frozen&&s.qR.length){s.qR.sort(prio);
       for(const S of s.stations){if(S.order||!s.qR.length)continue;
@@ -666,7 +890,8 @@ const manualOf=c=>({...c,robots:0,stations:0,pickers:c.pickers+c.stations});
 
 /* ============ App state ============ */
 const DASH=document.body.dataset.layout==='dash';
-let shadow=null;
+let shadow=null,cmpMode='manual',fcRob=null,fcAlt=null;
+const shadowCfg=()=>cmpMode==='ai'?{...cfg,ai:cfg.ai?0:1}:manualOf(cfg);
 let cfg={...DEFAULTS}, scenKey='normal', mods={}, imported=null, sim=null, base=null, full=null, timer=null, optRes=null, stressRes=null, aiRes=null;
 const targets={on:90,urg:85};let govMode='A', aiIdx=0, aiList=[];
 const ICONS={
@@ -712,11 +937,11 @@ function showVal(c){const v=cfg[c.k];$('#v_'+c.k).textContent=c.unit==='JOD'?fmt
 function syncControls(){for(const g of CONTROLS)for(const c of g.items){const el=$('#c_'+c.k);if(c.type==='check')el.checked=!!cfg[c.k];else{el.value=cfg[c.k];showVal(c)}}$('#seedIn').value=cfg.seed;$('#heroTitle').textContent=HOOKS[scenKey]()}
 function resetSim(){stop();sim=createSim(cfg,mods,imported);
   // a manual-only warehouse runs alongside, on the same orders, for the live race
-  shadow=createSim(manualOf(cfg),mods,imported,{quiet:true});
-  {const st=sim.step,fi=sim.finish;sim.step=()=>{shadow.step();return st()};sim.finish=()=>{shadow.finish();fi()}}base=runFull(manualOf(cfg),mods,imported);full=runFull(cfg,mods,imported);aiIdx=0;
+  shadow=createSim(shadowCfg(),mods,imported,{quiet:true});
+  {const st=sim.step,fi=sim.finish;sim.step=()=>{shadow.step();return st()};sim.finish=()=>{shadow.finish();fi()}}{const run=c=>{const x=createSim(c,mods,imported,{quiet:true});while(x.step());x.finish();return x};const bs=run(manualOf(cfg)),fs=run(cfg);base=bs.kpis();full=fs.kpis();fcRob=fs;fcAlt=cmpMode==='ai'?run(shadowCfg()):bs}aiIdx=0;
   sim.alerts.push({t:0,level:'info',msg:`Ready: ${SCENARIOS[scenKey].name}. ${cfg.robots} robots, ${cfg.stations} stations, ${cfg.pickers} pickers, ${cfg.packers} packers; ${sim.orders.length} orders today${imported?' (imported)':''}.`});render()}
 function run(){if(sim.t>=sim.H)resetSim();stop();const per=+$('#speedSel').value/20;let acc=0;
-  timer=setInterval(()=>{acc+=per;let did=false;while(acc>=1){acc-=1;if(!sim.step()){stop();sim.finish();render();toast('Day finished: see the result below');return}did=true}if(did)render()},50);render()}
+  timer=setInterval(()=>{acc+=per;let did=false;while(acc>=1){acc-=1;if(!sim.step()){stop();sim.finish();render();toast('Day finished: see screen 3, Result & decision');return}did=true}if(did)render()},50);render()}
 function stop(){if(timer){clearInterval(timer);timer=null}}
 const isDone=()=>sim.t>=sim.H;
 
@@ -733,7 +958,10 @@ function render(){
   // chips
   const onC=k.shipped?(k.onTime>=targets.on?'--ok':k.onTime>=targets.on-10?'--warn':'--bad'):'--muted';
   $('#chips').innerHTML=`<span class="chip" style="--c:var(${onC})"><i></i>${k.shipped?k.onTime.toFixed(0)+'% on time':'– on time'}</span><span class="chip" style="--c:var(${last.waiting>200?'--bad':last.waiting>80?'--warn':'--ok'})"><i></i>${fmtN(last.waiting)} waiting</span><span class="chip mono">🕐 ${done?'22:00':clockOf(sim.t)}</span>`;
+  {const on=!!cfg.ai,t=$('#aiToggle');t.classList.toggle('on',on);t.setAttribute('aria-checked',on);$('#aiState').textContent=on?'ON':'OFF';$('#cmpAiLbl').textContent=on?'off':'on'}
+  {const hf=$('#heroFacts');if(hf)hf.innerHTML=`<span>📦 <b>${fmtN(sim.orders.length)}</b> orders today</span><span>⏱ ready within <b>${cfg.sla} min</b></span><span>🤖 <b>${cfg.robots}</b> robots · <b>${cfg.stations}</b> stations</span><span>👷 <b>${cfg.pickers+cfg.stations+cfg.packers}</b> people</span><span>🧠 AI <b>${cfg.ai?'on':'off'}</b></span>`;$('#livePill').dataset.st=sc.slice(2)}
   renderRace();if(DASH)renderDash(k,last,sys,done);
+  renderVerdict(k);drawRaceChart();
   renderKpis(k,last);renderAlerts();renderAI(k);renderResult(k);renderBatt();drawBacklog();drawTput();drawBreak(k);renderPreview();drawFloor();
 }
 function renderRace(){
@@ -745,20 +973,20 @@ function renderRace(){
   const stats=(s,other)=>{const cmp=(a,b,low)=>!hasR||sim.t===0?'':(low?a<b-0.5:a>b+0.5)?'win':(low?a>b+0.5:a<b-0.5)?'lose':'';
     return `<div class="rstats"><span class="ok ${cmp(s.on,other.on)}">✓ ${fmtN(s.on)} on time</span><span class="bad ${cmp(s.late,other.late,1)}">✗ ${fmtN(s.late)} late</span><span class="${cmp(s.avg,other.avg,1)}">⏱ avg ${s.n?s.avg.toFixed(0):'–'} min</span><span class="${cmp(s.err,other.err,1)}">⚠ ${fmtN(s.err)} mistakes</span></div>`};
   const badge=hasR&&R.n>0&&Math.abs(diff)>0?`<em class="${diff>0?'up':'down'}">${diff>0?'+':''}${fmtN(diff)} ${diff>0?'more':'fewer'} on time</em>`:'';
-  $('#race').innerHTML=`<div class="rcard robots"><div class="rh"><span>🤖 ${hasR?`With ${cfg.robots} robots`:'Your setup (no robots)'}</span>${badge}</div>
+  $('#race').innerHTML=`<div class="rcard robots"><div class="rh"><span>🤖 ${hasR?`With ${cfg.robots} robots`:'Your setup (no robots)'} · AI ${cfg.ai?'on':'off'}</span>${badge}</div>
     <div class="rnum">${fmtN(R.n)}<small> / ${fmtN(total)} shipped</small></div>${bar(R)}${stats(R,M)}
-    <div class="rsub"><span><i style="background:var(--robot)"></i>Robot zone ${fmtN(rz)}</span><span><i style="background:var(--bike)"></i>Manual zone ${fmtN(R.n-rz)}</span><span>${fmtN(R.wait)} waiting</span></div></div>
-  <div class="rcard manual"><div class="rh"><span>🚶 Manual only (same team, no robots)</span></div>
+    <div class="rsub"><span><i style="background:var(--robot)"></i>Robot zone ${fmtN(rz)}</span><span><i style="background:var(--bike)"></i>Manual zone ${fmtN(R.n-rz)}</span>${cmpMode==='ai'?`<span>${fmtN(sim.walkKm)} km walked</span><span>${sim.flat} ran flat</span>`:''}<span>${fmtN(R.wait)} waiting</span></div></div>
+  <div class="rcard manual"><div class="rh"><span>${cmpMode==='ai'?`🧠 Same ${cfg.robots} robots, AI ${cfg.ai?'off':'on'}`:'🚶 Manual only (same team, no robots)'}</span></div>
     <div class="rnum">${fmtN(M.n)}<small> / ${fmtN(total)} shipped</small></div>${bar(M)}${stats(M,R)}
-    <div class="rsub"><span>${cfg.pickers+cfg.stations+shadow.extraPickers} pickers walking</span><span>${fmtN(M.wait)} waiting</span></div></div>
+    <div class="rsub">${cmpMode==='ai'?`<span>${fmtN(shadow.walkKm)} km walked</span><span>${shadow.flat} robots ran flat</span>`:`<span>${cfg.pickers+cfg.stations+shadow.extraPickers} pickers walking</span>`}<span>${fmtN(M.wait)} waiting</span></div></div>
   <div class="rkey"><span><i style="background:var(--ok)"></i>Shipped on time</span><span><i style="background:var(--bad)"></i>Shipped late</span><span><b></b>Orders received so far</span><span class="win">Green = better</span></div>`;
 }
 function renderKpis(k,last){
   const cls=(v,g,w)=>v>=g?'ok':v>=w?'warn':'bad';const avgB=sim.robots.length?sim.robots.reduce((a,r)=>a+r.batt,0)/sim.robots.length:0;const hasR=cfg.robots&&cfg.stations;
   const kp=[
     {l:'Orders shipped',v:`${fmtN(k.shipped)} / ${fmtN(sim.next)}`,s:`${last.waiting} waiting · ${fmtN(k.orders)} expected today`,c:'info'},
-    {l:'Average order-to-ship',v:k.avg.toFixed(0)+' min',s:`Target ${cfg.sla} min (express ${cfg.sla/2})`,c:k.avg<=cfg.sla*0.6?'ok':k.avg<=cfg.sla?'warn':'bad'},
-    {l:'Shipped on time',v:k.onTime.toFixed(1)+'%',s:`Express on time ${k.exOn.toFixed(0)}%`,c:cls(k.onTime,targets.on,targets.on-10)},
+    {l:'Average order-to-ship',v:k.avg.toFixed(0)+' min',s:`Target ${cfg.sla} min`,c:k.avg<=cfg.sla*0.6?'ok':k.avg<=cfg.sla?'warn':'bad'},
+    {l:'Shipped on time',v:k.onTime.toFixed(1)+'%',s:`${fmtN(k.late)} late · target ${targets.on}%`,c:cls(k.onTime,targets.on,targets.on-10)},
     {l:'Picking mistakes',v:fmtN(k.errors),s:`${fmtJ(k.errCost)} in returns and resends`,c:k.errors>20?'warn':'ok'},
     {l:'Robots',v:hasR?`${last.rWork} / ${cfg.robots}`:'None',s:hasR?`working · ${last.rCharge} charging · ${last.rDown} down · avg battery ${avgB.toFixed(0)}%`:'Manual warehouse',c:last.rDown?'bad':'robot'},
     {l:'Picker walking',v:k.walkKm.toFixed(0)+' km',s:`${cfg.pickers+sim.extraPickers} pickers · ${k.robotShare.toFixed(0)}% of orders by robots`,c:'bike'},
@@ -773,7 +1001,7 @@ function buildSuggestions(k){
   const S=[],sys=sim.system(),hasR=cfg.robots&&cfg.stations;
   if(sim.t===0&&!timer)S.push({c:'',i:'🤖',h:'Press “Run the day” to start',p:'I’ll watch the queues, the robot batteries and the packing line, and suggest what to do.'});
   if(!cfg.ai)S.push({c:'warn',i:'🧠',h:'The AI is switched off',p:'Turn it on for smarter batches, shorter robot trips, deadline-based priority and battery management.',a:'Turn AI on',f:()=>{cfg.ai=1;syncControls();resetSim();clearDecision()}});
-  if(sys!=='ok'&&!isDone())S.push({c:'bad',i:'⚠️',h:sys==='robots stopped by control room'?'Robots are stopped':'Robots stopped: '+sys,p:'Prioritise express orders in the manual zone and warn customers about possible delays.',a:sim.manualStop?'Restart robots':null,f:()=>{sim.manualStop=false;sim.alerts.push({t:sim.t,level:'cmd',msg:'AI suggestion applied: robots restarted.'});render()}});
+  if(sys!=='ok'&&!isDone())S.push({c:'bad',i:'⚠️',h:sys==='robots stopped by control room'?'Robots are stopped':'Robots stopped: '+sys,p:'Keep the manual zone on the most urgent orders and warn customers about possible delays.',a:sim.manualStop?'Restart robots':null,f:()=>{sim.manualStop=false;sim.alerts.push({t:sim.t,level:'cmd',msg:'AI suggestion applied: robots restarted.'});render()}});
   if(sim.qP.length>40)S.push({c:'bad',i:'📮',h:'Packing is the bottleneck',p:`${sim.qP.length} picked orders are waiting to be packed. Add 2 packers to clear the queue.`,a:'Add 2 packers',f:()=>{sim.addPackers(2);shadow.addPackers(2);sim.alerts.push({t:sim.t,level:'cmd',msg:'AI suggestion applied: 2 temporary packers added.'});render()}});
   if(sim.qM.length>40)S.push({c:'warn',i:'🚶',h:'The manual zone is falling behind',p:`${sim.qM.length} orders are waiting for a picker. Call in 3 temporary pickers.`,a:'Call 3 pickers',f:()=>{sim.addPickers(3);shadow.addPickers(3);sim.alerts.push({t:sim.t,level:'cmd',msg:'AI suggestion applied: 3 temporary pickers called in.'});render()}});
   if(sim.qR.length>40&&hasR)S.push({c:'warn',i:'🤖',h:'The robot queue is rising',p:`${sim.qR.length} orders are waiting for a robot station. Add a station or more robots.`,a:'Open setup',f:openSetup});
@@ -782,7 +1010,7 @@ function buildSuggestions(k){
   if(!cfg.ai&&k.flat)S.push({c:'bad',i:'🪫',h:`${k.flat} robot${k.flat>1?'s':''} ran flat in an aisle`,p:'With the AI on, tired robots are swapped for charged ones before this happens.'});
   const clock=START+sim.t;if(mods.ramadan&&clock>=1080&&clock<1140)S.push({c:'',i:'🌙',h:'The iftar peak starts at 19:00',p:'Charge all robots now and bring packers back from their break.'});
   if(mods.supply&&sim.held.length)S.push({c:'warn',i:'🚢',h:`${sim.held.length} orders are waiting for stock from Aqaba`,p:'Tell those customers about the delay and offer alternative products.'});
-  if(isDone())S.push({c:'ok',i:'🏁',h:'The day is finished',p:'Scroll down to see robots vs people, then ask the optimizer whether to invest.',a:'See the result',f:()=>$('#s4').scrollIntoView()});
+  if(isDone())S.push({c:'ok',i:'🏁',h:'The day is finished',p:'See Before vs after below, then ask the optimizer whether to invest.',a:'See the result',f:()=>$('#s4').scrollIntoView()});
   if(!S.length)S.push({c:'ok',i:'✅',h:'All good right now',p:`No bottlenecks and batteries are healthy.${cfg.ai?` Each picker trip collects up to ${cfg.batch} orders to cut walking.`:''}`});
   return S;
 }
@@ -802,17 +1030,58 @@ function renderDash(k,last,sys,done){
   $('#dClock').textContent=done?'22:00':clockOf(sim.t);$('#dProg').style.width=(Math.min(sim.t,DAY)/DAY*100)+'%';
   const ic={clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',watch:'<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2M10 2h4M19 5l1.5-1.5"/>',box:'<path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/>',coins:'<ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/>'};
   const c=(v,g,w,low)=>low?(v<=g?'ok':v<=w?'warn':'bad'):(v>=g?'ok':v>=w?'warn':'bad');
-  const cards=[['Shipped on time',k.shipped?k.onTime.toFixed(0)+'%':'–',k.shipped?c(k.onTime,targets.on,targets.on-10):'mute','clock',`Express ${k.shipped?k.exOn.toFixed(0)+'%':'–'} · target ${targets.on}%`],
-    ['Avg order-to-ship',k.shipped?k.avg.toFixed(0)+' min':'–',k.shipped?c(k.avg,cfg.sla*0.6,cfg.sla,1):'mute','watch',`Target ${cfg.sla} min (express ${cfg.sla/2})`],
-    ['Orders waiting',fmtN(last.waiting),c(last.waiting,80,200,1),'box',`${fmtN(k.shipped)} shipped of ${fmtN(sim.orders.length)}`],
-    ['Cost per order',k.shipped>=30?fmtJ2(k.perOrder):'–',k.shipped>=30?(k.perOrder<=base.perOrder?'ok':'warn'):'mute','coins',`Manual only: ${fmtJ2(base.perOrder)}`]];
-  $('#hero4').innerHTML=cards.map(([l,v,s,i,sub])=>`<div class="h4 ${s}"><div><div class="h4l"><i></i>${l}</div><div class="h4v">${v}</div><div class="h4s">${sub}</div></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ic[i]}</svg></div>`).join('');
+  const m=shadow.kpis(),mw=shadow.qR.length+shadow.qM.length+shadow.qP.length+shadow.held.length,has=k.shipped>0||m.shipped>0;
+  const other=cmpMode==='ai'?{ic:'🧠',lbl:`Same robots, AI ${cfg.ai?'off':'on'}`}:{ic:'🚶',lbl:'Manual only'};
+  const ro=`🤖 ${cfg.robots&&cfg.stations?`With ${cfg.robots} robots`:'Your setup'}${cmpMode==='ai'?` · AI ${cfg.ai?'on':'off'}`:''}`;
+  const rows=[['Shipped on time','clock',k.shipped?k.onTime:null,m.shipped?m.onTime:null,v=>v.toFixed(0)+'%',0],
+    ['Avg order-to-ship','watch',k.shipped?k.avg:null,m.shipped?m.avg:null,v=>v.toFixed(0)+' min',1],
+    ['Orders waiting','box',last.waiting,mw,v=>fmtN(v),1],
+    ['Cost per order','coins',k.shipped>=30?k.perOrder:null,m.shipped>=30?m.perOrder:null,v=>fmtJ2(v),1]];
+  const head=`<div class="k2head"><span>Live comparison, same orders:</span><b class="rob">${ro}</b><i>vs</i><b class="man">${other.ic} ${other.lbl}${cmpMode==='ai'?'':' (same team, no robots)'}</b><span class="k2g">Green = better</span></div>`;
+  $('#hero4').innerHTML=head+rows.map(([l,i,a,b,f,low])=>{const ok=a!=null&&b!=null&&sim.t>0;const aw=ok&&(low?a<b-1e-9:a>b+1e-9),bw=ok&&(low?b<a-1e-9:b>a+1e-9);
+    return `<div class="k2"><div class="k2h"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${ic[i]}</svg>${l}</div>
+    <div class="k2v"><div class="k2c rob ${aw?'win':''}"><span>${ro}</span><b>${a==null?'–':f(a)}</b></div><div class="k2c man ${bw?'win':''}"><span>${other.ic} ${other.lbl}</span><b>${b==null?'–':f(b)}</b></div></div></div>`}).join('');
   const nb=sim.alerts.filter(a=>a.level==='bad'||a.level==='cmd').length;$('#evCount').textContent=nb?`(${nb})`:'';
+}
+
+/* --- Screen 3: verdict and the on-time race chart --- */
+function cmpInfo(){return cmpMode==='ai'?{name:`same robots with AI ${cfg.ai?'off':'on'}`,short:`AI ${cfg.ai?'off':'on'}`,ic:'🧠'}:{name:'a manual warehouse (same team, no robots)',short:'Manual only',ic:'🚶'}}
+function renderVerdict(k){
+  const hasR=cfg.robots&&cfg.stations,live=sim.t>0&&!isDone(),done=isDone();
+  const r=done?k:full;let m;if(done)m=shadow.kpis();else m=fcAlt.kpis();
+  const v=$('#verdict'),ci=cmpInfo(),sc=SCENARIOS[scenKey].name;
+  if(!hasR){v.className='verdict warn';v.innerHTML=`<div class="vk">${sc}</div><div class="vtext">This setup has no robots. Add robots and stations in “Adjust setup” to compare.</div>`;return}
+  const onR=r.shipped-r.late,onM=m.shipped-m.late,dOn=onR-onM,dErr=m.errors-r.errors,dCost=m.perOrder-r.perOrder;
+  const w=(n,a,b)=>n>=0?a:b;const good=dOn>=0&&dCost>=0;
+  const who=cmpMode==='ai'?`With the AI ${cfg.ai?'on':'off'}, the robots`:`With ${cfg.robots} robots, the warehouse`;
+  v.className='verdict'+(good?'':' warn');
+  v.innerHTML=`<div class="vk"><span class="step" style="margin-right:8px">03 · Result</span>${done?'Today’s result':live?'Full-day forecast (the day is still running)':'Full-day forecast'} · ${sc} · compared with ${ci.name}</div>
+  <div class="vtext">${who} ships <b>${fmtN(Math.abs(dOn))} ${w(dOn,'more','fewer')} orders on time</b>, makes <b>${fmtN(Math.abs(dErr))} ${w(dErr,'fewer','more')} mistakes</b> and costs <b>${fmtJ2(Math.abs(dCost))} ${w(dCost,'less','more')} per order</b>.</div>
+  <div class="vnums"><div class="vn"><b class="${dOn>0?'good':dOn<0?'badv':''}">${dOn>=0?'+':'−'}${fmtN(Math.abs(dOn))}</b><span>orders on time (${fmtN(onR)} vs ${fmtN(onM)})</span></div>
+  <div class="vn"><b class="${dErr>0?'good':dErr<0?'badv':''}">${dErr>=0?'−':'+'}${fmtN(Math.abs(dErr))}</b><span>picking mistakes (${fmtN(r.errors)} vs ${fmtN(m.errors)})</span></div>
+  <div class="vn"><b class="${dCost>0?'good':dCost<0?'badv':''}">${fmtJ2(Math.abs(dCost))}</b><span>${w(dCost,'cheaper','more expensive')} per order (${fmtJ2(r.perOrder)} vs ${fmtJ2(m.perOrder)})</span></div></div>`;
+}
+function drawRaceChart(){
+  const cv=$('#raceChart');if(!cv||!cv.clientWidth)return;cv.dataset.h=innerWidth>900?Math.max(130,Math.min(230,innerHeight-700)):200;const{ctx,w,h}=setupCanvas(cv);
+  const L0=48,R=78,T=12,B=22,pw=w-L0-R,ph=h-T-B,ci=cmpInfo();
+  const live=sim.t>0,A=live?sim:fcRob,M=live?shadow:fcAlt,until=live?Math.min(sim.t,DAY):DAY;
+  const series=S=>{const ts=S.done.filter(o=>o.onTime).map(o=>o.shipped).sort((a,b)=>a-b);const out=[];let j=0;for(let t=0;t<=until;t+=5){while(j<ts.length&&ts[j]<=t)j++;out.push([t,j])}if(!live||isDone())out.push([until,ts.length]);return out};
+  const a=series(A),m=series(M),tot=Math.max(100,sim.orders.length);let max=Math.max(50,a.length?a[a.length-1][1]:0,m.length?m[m.length-1][1]:0);max=Math.ceil(max/500)*500||500;
+  const X=t=>L0+t/DAY*pw,Y=v=>T+ph-v/max*ph;hourAxis(ctx,L0,T,pw,ph,h);
+  ctx.textAlign='right';ctx.fillStyle=css('--muted');ctx.font='10.5px IBM Plex Mono, monospace';for(const v of [0,max/2,max])ctx.fillText(fmtN(v),L0-6,Y(v)+4);
+  if(a.length>1){ctx.beginPath();a.forEach(([t,v],i)=>i?ctx.lineTo(X(t),Y(v)):ctx.moveTo(X(t),Y(v)));m.slice().reverse().forEach(([t,v])=>ctx.lineTo(X(t),Y(v)));ctx.closePath();ctx.fillStyle=css('--ok');ctx.globalAlpha=.10;ctx.fill();ctx.globalAlpha=1}
+  const line=(S,c,dash)=>{if(S.length<2)return;ctx.setLineDash(dash?[6,5]:[]);ctx.beginPath();S.forEach(([t,v],i)=>i?ctx.lineTo(X(t),Y(v)):ctx.moveTo(X(t),Y(v)));ctx.strokeStyle=c;ctx.lineWidth=2.6;ctx.stroke();ctx.setLineDash([])};
+  line(m,cmpMode==='ai'?css('--violet'):css('--bike'),!live);line(a,css('--robot'),!live);
+  const end=(S,c,dy)=>{if(!S.length)return;const [t,v]=S[S.length-1];ctx.fillStyle=c;ctx.beginPath();ctx.arc(X(t),Y(v),4,0,Math.PI*2);ctx.fill();ctx.font='700 12px IBM Plex Sans, sans-serif';ctx.textAlign='left';ctx.fillText(fmtN(v),X(t)+8,Y(v)+4+dy)};
+  const av=a.length?a[a.length-1][1]:0,mv=m.length?m[m.length-1][1]:0,sep=Math.abs(Y(av)-Y(mv))<14?(av>=mv?-7:7):0;
+  end(a,css('--robot'),sep);end(m,cmpMode==='ai'?css('--violet'):css('--bike'),-sep);
+  $('#rcLegend').innerHTML=`<span><i style="background:var(--robot)"></i>🤖 With ${cfg.robots} robots${cmpMode==='ai'?` · AI ${cfg.ai?'on':'off'}`:''}</span><span><i style="background:var(${cmpMode==='ai'?'--violet':'--bike'})"></i>${ci.ic} ${ci.short}</span><span><i style="background:var(--ok);opacity:.35"></i>Gap</span>`;
+  $('#rcNote').textContent=live?(isDone()?'Final result of today’s run. The green area is the gap: orders that only robots got out on time.':`Live: ${clockOf(sim.t)}. The lines grow as orders are shipped on time; the green area is the gap.`):'Dashed lines = full-day forecast. Press Run to watch it live.';
 }
 
 /* --- Result: robots vs people --- */
 function renderResult(k){
-  const r=isDone()?k:full,m=isDone()?shadow.kpis():base,hasR=cfg.robots&&cfg.stations;
+  const r=isDone()?k:full,m=isDone()&&cmpMode==='manual'?shadow.kpis():base,hasR=cfg.robots&&cfg.stations;
   $('#resWhen').textContent=isDone()?'today’s result':'full-day forecast';
   const rows=[['Orders shipped',m.shipped,r.shipped,v=>`${fmtN(v)} / ${fmtN(r.orders)}`,0],['On time',m.onTime,r.onTime,v=>v.toFixed(0)+'%',0],['Mistakes',m.errors,r.errors,v=>fmtN(v),1],['Walking',m.walkKm,r.walkKm,v=>fmtN(v)+' km',1],['Cost per order',m.perOrder,r.perOrder,v=>fmtJ2(v),1]];
   $('#baTable').innerHTML=`<tr><th></th><th>Manual only</th><th class="rob">${hasR?`With ${cfg.robots} robots`:'With robots'}</th></tr>`+rows.map(([l,a,b,f,low])=>{
@@ -821,8 +1090,8 @@ function renderResult(k){
     return `<tr><td>${l}</td><td>${f(a)}</td><td class="rob ${good?'good':bad?'badv':''}">${f(b)} ${up?'↑':down?'↓':''}</td></tr>`}).join('');
   const b=$('#resBanner');
   if(!hasR){b.className='banner warn';b.textContent='No robots in this setup: this is the manual “before” warehouse.';return}
-  const dOn=r.onTime-m.onTime,dErr=m.errors-r.errors,dCost=m.perOrder-r.perOrder;
-  if(dOn>=-0.5&&dCost>0){b.className='banner';b.textContent=`✓ Same team, with robots: ${dOn>=0.5?`+${dOn.toFixed(0)} points on time, `:''}${dErr>0?`${fmtN(dErr)} fewer mistakes, `:''}${fmtJ2(dCost)} cheaper per order. Is it worth the investment? See ${DASH?'“Should we invest?”':'step 05'}.`}
+  const save=m.total-r.total,dOn=r.onTime-m.onTime,dErr=m.errors-r.errors,dCost=m.perOrder-r.perOrder;
+  if(dOn>=-0.5&&dCost>0){b.className='banner';b.textContent=`✓ Same team, with robots: ${dOn>=0.5?`+${dOn.toFixed(0)} points on time, `:''}${dErr>0?`${fmtN(dErr)} fewer mistakes, `:''}${fmtJ2(dCost)} cheaper per order. Is it worth the investment? See ${DASH?'“Should we invest?” below':'step 05'}.`}
   else if(r.onTime>m.onTime+1){b.className='banner warn';b.textContent=`Robots ship ${(r.onTime-m.onTime).toFixed(0)} points more orders on time, but cost ${fmtJ(-save)} more a day.`}
   else{b.className='banner warn';b.textContent='Here robots add cost without much benefit. Ask the optimizer below.'}
 }
@@ -838,55 +1107,84 @@ function renderPreview(){$('#dataPreview').innerHTML=`<table class="small-table"
 /* --- canvases --- */
 function setupCanvas(cv){const dpr=window.devicePixelRatio||1;const w=cv.clientWidth,h=+(cv.dataset.h||(cv.dataset.h=cv.getAttribute('height')));cv.width=w*dpr;cv.height=h*dpr;cv.style.height=h+'px';const ctx=cv.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);return{ctx,w,h}}
 const hashN=(a,b)=>{let x=(a*73856093)^(b*19349663);x=(x^(x>>>13))>>>0;return x};
-function drawFloor(){
-  const cv=$('#floor');if(!cv||!cv.clientWidth||!sim)return;const{ctx,w,h}=setupCanvas(cv);const now=performance.now()/1000;
+function drawFloor(cvIn,mask){
+  const cv=cvIn||$('#floor');if(!cv||!cv.clientWidth||!sim)return;const{ctx,w,h}=setupCanvas(cv);const now=performance.now()/1000;
+  const B=!mask||mask==='building',RB=!mask||mask==='robots',PP=!mask||mask==='people',OO=!mask||mask==='orders';
   const narrow=w<560,fs=narrow?9.5:11;
-  ctx.fillStyle=css('--panel2');ctx.fillRect(0,0,w,h);
+  if(B){ctx.fillStyle=css('--panel2');ctx.fillRect(0,0,w,h)}else ctx.clearRect(0,0,w,h);
   const rz={x:10,y:28,w:Math.round(w*0.56),h:h-72}, mz={x:Math.round(w*0.56)+24,y:28,w:w-Math.round(w*0.56)-34,h:h-142};
   const pk={x:mz.x,y:mz.y+mz.h+14,w:mz.w,h:56}, dock={x:10,y:h-30,w:w-20,h:22};
   const sysOk=sim.system()==='ok';
   // robot zone
-  ctx.fillStyle=css('--panel');ctx.fillRect(rz.x,rz.y,rz.w,rz.h);ctx.strokeStyle=css('--border');ctx.strokeRect(rz.x,rz.y,rz.w,rz.h);
-  ctx.fillStyle=css('--text');ctx.font=`700 ${fs+1}px IBM Plex Sans, sans-serif`;ctx.textAlign='left';ctx.fillText(`Robot zone · ${cfg.coverage}% of orders`+(sysOk?'':' · STOPPED'),rz.x+6,rz.y-8);
-  const cols=12,rows=6,chW=36;const gx=rz.x+chW+16,gw=rz.w-chW-30,gy=rz.y+30,gh=rz.h-110;
+  if(B){ctx.fillStyle=css('--panel');ctx.fillRect(rz.x,rz.y,rz.w,rz.h);ctx.strokeStyle=css('--border');ctx.strokeRect(rz.x,rz.y,rz.w,rz.h);
+  ctx.fillStyle=css('--text');ctx.font=`700 ${fs+1}px IBM Plex Sans, sans-serif`;ctx.textAlign='left';ctx.fillText(`Robot zone · ${cfg.coverage}% of orders`+(sysOk?'':' · STOPPED'),rz.x+6,rz.y-8)}
+  const rr=(x,y,w,h,r)=>{ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()};
+  const chW=narrow?38:54;const cols=narrow?8:12,rows=5;const gx=rz.x+chW+14,gw=rz.w-chW-26,gy=rz.y+34,stY=rz.y+rz.h-60,gh=stY-gy-34;
   const podW=gw/cols,podH=gh/rows;const pods=[];
-  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const x=gx+c*podW+podW*0.18,y=gy+r*podH+podH*0.2;pods.push([x+podW*0.32,y+podH*0.3]);ctx.fillStyle=css('--grid');ctx.fillRect(x,y,podW*0.64,podH*0.6)}
-  // chargers
-  ctx.fillStyle=css('--muted');ctx.font=`600 ${fs-1}px IBM Plex Sans, sans-serif`;ctx.fillText('Chargers',rz.x+6,rz.y+18);
-  // stations
-  const nS=Math.max(0,cfg.stations),stY=rz.y+rz.h-56;const stations=[];
-  const sw=Math.min(56,gw/Math.max(1,nS)-4),hw=sw/2;
-  for(let i=0;i<nS;i++){const x=gx+(i+0.5)*gw/Math.max(1,nS)-hw;stations.push([x+hw,stY]);const S=sim.stations[i];
-    ctx.fillStyle=S&&S.order?css('--robot'):css('--panel2');ctx.globalAlpha=S&&S.order?.9:1;ctx.fillRect(x,stY,sw,40);ctx.globalAlpha=1;ctx.strokeStyle=css('--robot');ctx.strokeRect(x,stY,sw,40);
-    ctx.fillStyle=S&&S.order?'#fff':css('--text');ctx.font=`700 ${fs}px IBM Plex Sans, sans-serif`;ctx.textAlign='center';ctx.fillText('S'+(i+1),x+hw,stY+17);ctx.font=`${fs-1.5}px IBM Plex Mono, monospace`;ctx.fillText(S&&S.order?(sw>=50?`${S.rps} robots`:`${S.rps}🤖`.replace('🤖','r')):'idle',x+hw,stY+31)}
-  if(!nS){ctx.fillStyle=css('--muted');ctx.textAlign='center';ctx.font=`600 ${fs+1}px IBM Plex Sans, sans-serif`;ctx.fillText('No pick stations: manual warehouse',rz.x+rz.w/2,stY+20)}
-  ctx.textAlign='left';
+  for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const w=podW*0.62,h=podH*0.58;pods.push({x:gx+c*podW+(podW-w)/2,y:gy+r*podH+(podH-h)/2,w,h})}
+  const pc=p=>[p.x+p.w/2,p.y+p.h/2];
+  // charger strip
+  if(B){ctx.fillStyle=css('--panel2');ctx.fillRect(rz.x+6,rz.y+22,chW,stY-rz.y-30);
+  ctx.fillStyle=css('--warn');ctx.font=`700 ${fs-1}px IBM Plex Sans, sans-serif`;ctx.textAlign='center';ctx.fillText('⚡ Charge',rz.x+6+chW/2,rz.y+36)}
+  // stations (with the worker who picks)
+  const nS=Math.max(0,cfg.stations);const stations=[];const sw=Math.min(62,gw/Math.max(1,nS)-8),hw=sw/2;
+  for(let i=0;i<nS;i++){const x=gx+(i+0.5)*gw/Math.max(1,nS)-hw;stations.push([x+hw,stY-4]);const S=sim.stations[i],busy=S&&S.order;
+    if(B){ctx.fillStyle=busy?css('--robot'):css('--panel2');rr(x,stY,sw,34,6);ctx.fill();ctx.strokeStyle=css('--robot');ctx.lineWidth=1.5;ctx.stroke();ctx.lineWidth=1;
+    ctx.fillStyle=busy?'#fff':css('--text');ctx.font=`700 ${fs}px IBM Plex Sans, sans-serif`;ctx.textAlign='center';ctx.fillText('S'+(i+1),x+hw,stY+14);
+    ctx.font=`${fs-2}px IBM Plex Sans, sans-serif`;ctx.fillText(busy?(sw>=54?'picking':'pick'):'idle',x+hw,stY+27)}
+    // worker icon
+    const wx=x+hw,wy=stY+44;if(PP){ctx.fillStyle=css('--bike');ctx.beginPath();ctx.arc(wx,wy,3.6,0,Math.PI*2);ctx.fill();ctx.fillRect(wx-3.5,wy+4,7,7)}}
+  if(!nS&&B){ctx.fillStyle=css('--muted');ctx.textAlign='center';ctx.font=`600 ${fs+1}px IBM Plex Sans, sans-serif`;ctx.fillText('No pick stations: manual warehouse',rz.x+rz.w/2,stY+20)}
+  // robot positions
+  const busySt=sim.stations.map((S,i)=>S.order?i:-1).filter(i=>i>=0);let wi=0,ci=0,pi=0;const drawn=[];const emptied=new Set();
+  for(const r of sim.robots){let x,y,kind='idle';
+    if(r.state==='charge'){x=rz.x+6+chW/2+((ci%2)?9:-9);y=rz.y+52+Math.floor(ci/2)*16;ci++;kind='charge'}
+    else if(r.state==='down'){const p=pc(pods[hashN(r.id,7)%pods.length]);x=p[0];y=p[1];kind='down'}
+    else if(r.state==='work'&&busySt.length&&sysOk){const si=busySt[wi%busySt.length];wi++;const T=5;const ph=((now/T)+r.id*0.37)%1;const cyc=Math.floor(now/T+r.id*0.37);const pidx=hashN(r.id,cyc)%pods.length;const p=pc(pods[pidx]);const sp=stations[si];
+      // out: station → shelf (empty) · back: shelf → station (carrying)
+      const back=ph>=0.5,f=back?(1-ph)*2:ph*2;const laneY=p[1]+podH*0.5;
+      if(f<0.5){x=sp[0];y=sp[1]-(sp[1]-laneY)*(f*2)}else{y=laneY-(laneY-p[1])*((f-0.5)*2)*(f>0.95?1:0)-0;x=sp[0]+(p[0]-sp[0])*Math.min(1,(f-0.5)*2.2)}
+      if(f>0.97){x=p[0];y=p[1]}
+      kind=back?'carry':'work';if(back)emptied.add(pidx)}
+    else if(r.state==='work'){const p=pc(pods[hashN(r.id,3)%pods.length]);x=p[0];y=p[1];kind='stop'}
+    else{const per=Math.max(1,Math.floor(gw/16));x=gx+8+(pi%per)*16;y=stY-14-Math.floor(pi/per)*12;pi++}
+    drawn.push([x,y,kind])}
+  // shelves (an empty slot = shelf out with a robot)
+  if(B)pods.forEach((p,i)=>{if(emptied.has(i)){ctx.setLineDash([3,3]);ctx.strokeStyle=css('--muted');ctx.strokeRect(p.x,p.y,p.w,p.h);ctx.setLineDash([])}else{ctx.fillStyle=css('--grid');ctx.fillRect(p.x,p.y,p.w,p.h);ctx.fillStyle=css('--border');ctx.fillRect(p.x,p.y+p.h*0.48,p.w,1.5)}});
+  ctx.fillStyle=css('--muted');ctx.font=`600 ${fs-1}px IBM Plex Sans, sans-serif`;ctx.textAlign='left';if(!narrow&&B)ctx.fillText('Shelves of products',gx,rz.y+20);
+  if(pi&&RB){ctx.fillText('Parking',gx,stY-24-Math.floor((pi-1)/Math.max(1,Math.floor(gw/16)))*12)}
   // robots
-  let ci=0,pi=0;const busySt=sim.stations.map((S,i)=>S.order?i:-1).filter(i=>i>=0);let wi=0;
-  for(const r of sim.robots){let x,y,col=css('--robot');
-    if(r.state==='charge'){x=rz.x+12+(ci%2)*14;y=rz.y+30+Math.floor(ci/2)*14;ci++;col=css('--warn')}
-    else if(r.state==='down'){const p=pods[hashN(r.id,7)%pods.length];x=p[0];y=p[1];col=css('--bad')}
-    else if(r.state==='work'&&busySt.length&&sysOk){const si=busySt[wi%busySt.length];wi++;const T=4.5;const ph=((now/T)+r.id*0.37)%1;const cyc=Math.floor(now/T+r.id*0.37);const p=pods[hashN(r.id,cyc)%pods.length];const sp=stations[si];
-      const f=ph<0.5?ph*2:(1-ph)*2; // 0 at station, 1 at pod
-      const midY=sp[1]-12;if(f<0.5){x=sp[0];y=sp[1]-6-(sp[1]-6-p[1])*(f*2)}else{y=p[1];x=sp[0]+(p[0]-sp[0])*((f-0.5)*2)}}
-    else if(r.state==='work'){const p=pods[hashN(r.id,3)%pods.length];x=p[0];y=p[1]}
-    else{x=gx+(pi%cols)*podW+podW/2;y=stY-14-Math.floor(pi/cols)*10;pi++;col=css('--muted')}
-    ctx.fillStyle=col;ctx.fillRect(x-4,y-4,8,8);if(r.state==='work'&&sysOk){ctx.fillStyle=css('--grid');ctx.fillRect(x-3,y-8,6,4)}}
-  ctx.fillStyle=css('--muted');ctx.font=`${fs-1}px IBM Plex Mono, monospace`;ctx.textAlign='left';
-  ctx.fillText(`Queue: ${sim.qR.length} orders`,rz.x+rz.w-140,rz.y+rz.h-6);
+  if(RB)for(const [x,y,k] of drawn){
+    if(k==='carry'){ctx.fillStyle=css('--warn');ctx.globalAlpha=.35;ctx.fillRect(x-8,y-8,16,16);ctx.globalAlpha=1;ctx.strokeStyle=css('--warn');ctx.strokeRect(x-8,y-8,16,16)}
+    ctx.fillStyle=k==='charge'?css('--warn'):k==='down'?css('--bad'):k==='idle'?css('--muted'):css('--robot');
+    rr(x-5,y-5,10,10,3);ctx.fill();
+    if(k==='charge'){ctx.fillStyle='#fff';ctx.font=`700 8px sans-serif`;ctx.textAlign='center';ctx.fillText('⚡',x,y+3)}
+    if(k==='down'){ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(x-3,y-3);ctx.lineTo(x+3,y+3);ctx.moveTo(x+3,y-3);ctx.lineTo(x-3,y+3);ctx.stroke();ctx.lineWidth=1}}
+  ctx.fillStyle=css('--muted');ctx.font=`${fs-1}px IBM Plex Mono, monospace`;ctx.textAlign='right';
+  if(OO&&!mask)ctx.fillText(narrow?`${sim.qR.length} waiting`:`${sim.qR.length} orders waiting for a station`,rz.x+rz.w-8,rz.y+20);ctx.textAlign='left';
   // manual zone
-  ctx.fillStyle=css('--panel');ctx.fillRect(mz.x,mz.y,mz.w,mz.h);ctx.strokeStyle=css('--border');ctx.strokeRect(mz.x,mz.y,mz.w,mz.h);
+  const aisles=6,aw=mz.w/aisles;
+  if(B){ctx.fillStyle=css('--panel');ctx.fillRect(mz.x,mz.y,mz.w,mz.h);ctx.strokeStyle=css('--border');ctx.strokeRect(mz.x,mz.y,mz.w,mz.h);
   ctx.fillStyle=css('--text');ctx.font=`700 ${fs+1}px IBM Plex Sans, sans-serif`;ctx.fillText(`Manual zone · ${100-(cfg.robots&&cfg.stations?cfg.coverage:0)}%`,mz.x+4,mz.y-8);
-  const aisles=6,aw=mz.w/aisles;for(let a=0;a<aisles;a++){ctx.fillStyle=css('--grid');ctx.fillRect(mz.x+a*aw+aw*0.15,mz.y+12,aw*0.2,mz.h-40);ctx.fillRect(mz.x+a*aw+aw*0.65,mz.y+12,aw*0.2,mz.h-40)}
-  sim.pickers.forEach((p,i)=>{let x,y;if(p.batch.length){const a=hashN(p.id,Math.floor(now/6+i*0.21))%aisles;const ph=(now/6+i*0.21)%1;x=mz.x+a*aw+aw*0.5;y=mz.y+16+(mz.h-50)*(ph<0.5?ph*2:(1-ph)*2)}else{x=mz.x+10+(i%14)*((mz.w-20)/14);y=mz.y+mz.h-12}
+  for(let a=0;a<aisles;a++){ctx.fillStyle=css('--grid');ctx.fillRect(mz.x+a*aw+aw*0.15,mz.y+12,aw*0.2,mz.h-40);ctx.fillRect(mz.x+a*aw+aw*0.65,mz.y+12,aw*0.2,mz.h-40)}}
+  if(PP)sim.pickers.forEach((p,i)=>{let x,y;if(p.batch.length){const a=hashN(p.id,Math.floor(now/6+i*0.21))%aisles;const ph=(now/6+i*0.21)%1;x=mz.x+a*aw+aw*0.5;y=mz.y+16+(mz.h-50)*(ph<0.5?ph*2:(1-ph)*2)}else{x=mz.x+10+(i%14)*((mz.w-20)/14);y=mz.y+mz.h-12}
     ctx.fillStyle=p.batch.length?css('--bike'):css('--muted');ctx.beginPath();ctx.arc(x,y,4.5,0,Math.PI*2);ctx.fill()});
-  ctx.fillStyle=css('--muted');ctx.font=`${fs-1}px IBM Plex Mono, monospace`;ctx.fillText(`Queue: ${sim.qM.length} orders`,mz.x+4,mz.y+mz.h+0-2+12-12+10>0?mz.y+mz.h-26+22:0);
+  ctx.fillStyle=css('--muted');ctx.font=`${fs-1}px IBM Plex Mono, monospace`;if(!mask)ctx.fillText(`Queue: ${sim.qM.length} orders`,mz.x+4,mz.y+mz.h+0-2+12-12+10>0?mz.y+mz.h-26+22:0);
   // packing
-  ctx.fillStyle=css('--panel');ctx.fillRect(pk.x,pk.y,pk.w,pk.h);ctx.strokeStyle=css('--border');ctx.strokeRect(pk.x,pk.y,pk.w,pk.h);
-  ctx.fillStyle=css('--text');ctx.font=`700 ${fs}px IBM Plex Sans, sans-serif`;ctx.fillText(`Packing · queue ${sim.qP.length}`,pk.x+4,pk.y+14);
-  const nK=sim.packers.length,kw=Math.min(26,(pk.w-12)/Math.max(1,nK));sim.packers.forEach((k,i)=>{ctx.fillStyle=k.order?css('--warn'):css('--grid');ctx.fillRect(pk.x+6+i*kw,pk.y+24,kw-4,22)});
+  if(B){ctx.fillStyle=css('--panel');ctx.fillRect(pk.x,pk.y,pk.w,pk.h);ctx.strokeStyle=css('--border');ctx.strokeRect(pk.x,pk.y,pk.w,pk.h)}
+  ctx.fillStyle=css('--text');ctx.font=`700 ${fs}px IBM Plex Sans, sans-serif`;if(B)ctx.fillText(mask?'Packing':`Packing · ${sim.qP.length} waiting`,pk.x+4,pk.y+14);ctx.fillStyle=css('--muted');ctx.font=`${fs-1.5}px IBM Plex Sans, sans-serif`;ctx.textAlign='right';if(!narrow&&!mask)ctx.fillText('each box = 1 packer (filled = busy)',pk.x+pk.w-6,pk.y+14);ctx.textAlign='left';
+  const nK=sim.packers.length,kw=Math.min(26,(pk.w-12)/Math.max(1,nK));sim.packers.forEach((k,i)=>{const bx=pk.x+6+i*kw;if(!mask){ctx.fillStyle=k.order?css('--warn'):css('--grid');ctx.fillRect(bx,pk.y+24,kw-4,22)}else if(B){ctx.fillStyle=css('--grid');ctx.fillRect(bx,pk.y+24,kw-4,22)}else if(PP){const cx=bx+(kw-4)/2;ctx.fillStyle=k.order?css('--bike'):css('--muted');ctx.beginPath();ctx.arc(cx,pk.y+30,3.6,0,Math.PI*2);ctx.fill();ctx.fillRect(cx-3.5,pk.y+35,7,7)}});
   // dock
-  const k=sim.kpis();ctx.fillStyle=css('--ok');ctx.globalAlpha=.15;ctx.fillRect(dock.x,dock.y,dock.w,dock.h);ctx.globalAlpha=1;ctx.fillStyle=css('--text');ctx.font=`700 ${fs}px IBM Plex Sans, sans-serif`;
+  if(B){ctx.fillStyle=css('--ok');ctx.globalAlpha=.15;ctx.fillRect(dock.x,dock.y,dock.w,dock.h);ctx.globalAlpha=1;if(mask){ctx.fillStyle=css('--text');ctx.font=`700 ${fs}px IBM Plex Sans, sans-serif`;ctx.fillText('🚚 Shipping dock',dock.x+8,dock.y+15)}}
+  if(mask==='orders'){ // queues as stacks of parcels
+    const k=sim.kpis();const stack=(x,y,n,cols,col,label)=>{const m=Math.min(n,cols*6);for(let q=0;q<m;q++){ctx.fillStyle=col;ctx.fillRect(x+(q%cols)*9,y-Math.floor(q/cols)*9,7,7)}ctx.fillStyle=css('--text');ctx.font=`700 ${fs}px IBM Plex Sans, sans-serif`;ctx.textAlign='left';ctx.fillText(label,x,y-Math.max(1,Math.ceil(m/cols))*9-6)};
+    stack(gx+4,stY-10,sim.qR.length,Math.max(6,Math.floor(gw/9/2)),css('--warn'),`📦 ${sim.qR.length} waiting for a robot station`);
+    stack(mz.x+10,mz.y+mz.h-16,sim.qM.length,Math.max(6,Math.floor((mz.w-20)/9)),css('--warn'),`📦 ${sim.qM.length} waiting for a picker`);
+    stack(pk.x+Math.min(110,pk.w*0.35),pk.y+pk.h-10,sim.qP.length,Math.max(6,Math.floor((pk.w*0.6)/9)),css('--blue'),`📮 ${sim.qP.length} waiting to be packed`);
+    ctx.fillStyle=css('--ok');ctx.font=`700 ${fs+1}px IBM Plex Sans, sans-serif`;ctx.fillText(`✅ ${fmtN(k.shipped)} shipped · ${fmtN(k.shipped-k.late)} on time · ${k.late} late`,dock.x+(narrow?110:150),dock.y+15);
+    return}
+  if(mask)return;
+  const k=sim.kpis();ctx.fillStyle=css('--text');ctx.font=`700 ${fs}px IBM Plex Sans, sans-serif`;
   ctx.fillText(`🚚 Shipping dock · ${fmtN(k.shipped)} orders shipped · ${sim.held.length?sim.held.length+' waiting for stock · ':''}${k.late} late`,dock.x+8,dock.y+15);
 }
 
@@ -921,15 +1219,16 @@ function drawBreak(k){
 const meets=r=>r.onTime>=targets.on&&r.exOn>=targets.urg;
 function minPickers(c){let lo=0,hi=40;const ok=p=>meets(runFull({...c,pickers:p},mods,imported));if(!ok(hi))return null;while(lo<hi){const m=Math.floor((lo+hi)/2);if(ok(m))hi=m;else lo=m+1}return hi}
 let optBest=null;
-function clearDecision(){optRes=null;optBest=null;$('#applyBest').hidden=true;$('#optBtn').className='btn primary';$('#optBtn').textContent='Find the best setup';$('#exportOpt').disabled=true;
-  $('#optSummary').innerHTML=`<div class="decide-k">The question</div><div class="decide-big">What is the cheapest setup that still ships orders on time?</div><div class="targets"><label>Orders on time ≥ <b id="vOn"></b><input type="range" id="tOn" min="60" max="99" step="1" value="${targets.on}"></label><label>Express on time ≥ <b id="vUrg"></b><input type="range" id="tUrg" min="50" max="100" step="1" value="${targets.urg}"></label></div>`;wireTargets();$('#decideMore').innerHTML='';if($('#decideWrap'))$('#decideWrap').hidden=true}
+function goIdle(){const g=$('#goBox'),bt=$('#goBtn');if(!g||!bt)return;bt.className='gobtn';bt.innerHTML='<b>⚖️ Get the decision</b><span>GO · GO WITH CONDITIONS · NO-GO</span>';g.hidden=false;g.className='gobox idle';g.innerHTML='Press the button: the simulator tests <b>19 setups</b> on <b>8 kinds of day</b> and answers in one word: <b>GO</b>, <b>GO WITH CONDITIONS</b> or <b>NO-GO</b>.'}
+function clearDecision(){optRes=null;optBest=null;$('#applyBest').hidden=true;$('#optBtn').className='btn';$('#optBtn').textContent='Find the best setup';goIdle();$('#exportOpt').disabled=true;
+  $('#optSummary').innerHTML=`<div class="decide-k">The question</div><div class="decide-big">What is the cheapest setup that still ships orders on time?</div><div class="targets"><label>Orders on time ≥ <b id="vOn"></b><input type="range" id="tOn" min="60" max="99" step="1" value="${targets.on}"></label></div>`;wireTargets();$('#decideMore').innerHTML='';if($('#decideWrap'))$('#decideWrap').hidden=true}
 function runOpt(){
   const res=[];
   const tryOne=(st,rps)=>{const c={...cfg,stations:st,robots:st*rps};const p=minPickers(st?c:manualOf({...c,stations:0}));if(p===null){res.push({stations:st,robots:st*rps,pickers:null});return}
     const fc={...c,pickers:p};const k=runFull(st?fc:{...fc,robots:0,stations:0},mods,imported);res.push({stations:st,robots:st*rps,pickers:p,...k})};
   tryOne(0,0);for(const st of [2,3,4,5,6,8])for(const rps of [3,4,5])tryOne(st,rps);
   optRes=res;const ok=res.filter(r=>r.pickers!==null);const best=ok.length?ok.reduce((a,b)=>b.total<a.total?b:a):null;const man=res[0].pickers!==null?res[0]:null;optBest=best;
-  let h=`<div class="decide-k">Recommended for “${SCENARIOS[scenKey].name}” · targets ${targets.on}% / ${targets.urg}% express</div>`;
+  let h=`<div class="decide-k">Recommended for “${SCENARIOS[scenKey].name}” · target: at least ${targets.on}% of orders on time</div>`;
   if(!best){h+=`<div class="decide-big">No setup meets both targets</div><div class="decide-note">Add packers in “Adjust setup”, relax the targets, or extend the ship-within time.</div>`}
   else if(!best.stations){h+=`<div class="decide-big">Don’t buy robots: ${best.pickers} manual pickers</div><div class="facts"><span><b>${fmtJ2(best.perOrder)}</b> per order</span><span><b>${best.onTime.toFixed(0)}%</b> on time</span></div><div class="decide-note">With these wages and robot prices, people are cheaper here. Try White Friday, higher wages or cheaper robots.</div>`}
   else{const save=man?man.total-best.total:null,yrs=save>0?best.invest/(save*300):null,move=man?man.pickers-best.pickers-best.stations:0;
@@ -946,17 +1245,51 @@ function runStress(){
   const res=[];for(const [k,s] of Object.entries(SCENARIOS)){const c={...DEFAULTS,seed:cfg.seed,robots:cfg.robots,stations:cfg.stations,pickers:cfg.pickers,packers:cfg.packers,coverage:cfg.coverage,ai:cfg.ai,batch:cfg.batch,...s.cfg};if(s.cfg.pickers)c.pickers=Math.max(cfg.pickers,s.cfg.pickers);if(s.cfg.packers)c.packers=Math.max(cfg.packers,s.cfg.packers);
     const r=runFull(c,s.mods,null),b=runFull(manualOf(c),s.mods,null);res.push({scenario:s.name,...r,baseOn:b.onTime,basePer:b.perOrder})}
   stressRes=res;const fails=res.filter(r=>!meets(r)).map(r=>r.scenario);
-  setMore('stress',`<h3>Stress test: ${cfg.robots} robots, ${cfg.stations} stations, ${cfg.pickers} pickers in every scenario</h3><div style="overflow:auto"><table><tr><th>Scenario</th><th class="num">On time</th><th class="num">Express</th><th class="num">Mistakes</th><th class="num">Per order</th><th class="num">vs same team, no robots</th><th>Verdict</th></tr>${res.map(r=>{const m=meets(r);const v=m?['ok','PASS']:r.onTime>=targets.on-10?['warn','RISK']:['bad','FAIL'];const d=r.onTime-r.baseOn;
-    return `<tr><td>${r.scenario}</td><td class="num">${r.onTime.toFixed(1)}%</td><td class="num">${r.exOn.toFixed(0)}%</td><td class="num">${fmtN(r.errors)}</td><td class="num">${fmtJ2(r.perOrder)}</td><td class="num ${d>0.5?'better':d<-0.5?'worse':''}">${d>=0?'+':''}${d.toFixed(1)} pts</td><td><span class="vbadge" style="color:var(--${v[0]})">${v[1]}</span></td></tr>`}).join('')}</table></div><p class="note">${fails.length?`<b>Weak points:</b> ${fails.join(', ')}. Plan temporary staff, a backup generator and offline procedures.`:'The setup meets the targets in every scenario.'}</p>`);
+  setMore('stress',`<h3>Stress test: ${cfg.robots} robots, ${cfg.stations} stations, ${cfg.pickers} pickers in every scenario</h3><div style="overflow:auto"><table><tr><th>Scenario</th><th class="num">On time</th><th class="num">Mistakes</th><th class="num">Per order</th><th class="num">vs same team, no robots</th><th>Verdict</th></tr>${res.map(r=>{const m=meets(r);const v=m?['ok','PASS']:r.onTime>=targets.on-10?['warn','RISK']:['bad','FAIL'];const d=r.onTime-r.baseOn;
+    return `<tr><td>${r.scenario}</td><td class="num">${r.onTime.toFixed(1)}%</td><td class="num">${fmtN(r.errors)}</td><td class="num">${fmtJ2(r.perOrder)}</td><td class="num ${d>0.5?'better':d<-0.5?'worse':''}">${d>=0?'+':''}${d.toFixed(1)} pts</td><td><span class="vbadge" style="color:var(--${v[0]})">${v[1]}</span></td></tr>`}).join('')}</table></div><p class="note">${fails.length?`<b>Weak points:</b> ${fails.join(', ')}. Plan temporary staff, a backup generator and offline procedures.`:'The setup meets the targets in every scenario.'}</p>`);
   $('#exportStress').disabled=false;toast('Stress test finished');
 }
 function runAI(){
   const off=runFull({...cfg,ai:0},mods,imported),on=runFull({...cfg,ai:1},mods,imported);aiRes={off,on};
   const row=(l,a,b,f,better)=>{const g=better==='low'?b<a-1e-9:b>a+1e-9,bd=better==='low'?b>a+1e-9:b<a-1e-9;return `<tr><td>${l}</td><td class="num">${f(a)}</td><td class="num ${g?'better':bd?'worse':''}">${f(b)}</td></tr>`};
-  setMore('ai',`<h3>Is the AI worth it? ${SCENARIOS[scenKey].name}, same setup, same orders</h3><p class="note" style="margin-top:0"><b>Simple control</b>: 2 orders per picker trip, express first then first-come-first-served, robots charge only when nearly empty. <b>AI</b>: bigger batches with shorter routes, smart slotting, deadline-based priority and predictive charging.</p><div style="overflow:auto"><table><tr><th></th><th class="num">Simple control</th><th class="num">With AI</th></tr>
-  ${row('Shipped on time',off.onTime,on.onTime,v=>v.toFixed(1)+'%','high')}${row('Express on time',off.exOn,on.exOn,v=>v.toFixed(0)+'%','high')}${row('Average order-to-ship',off.avg,on.avg,v=>v.toFixed(0)+' min','low')}${row('Picker walking',off.walkKm,on.walkKm,v=>fmtN(v)+' km','low')}${row('Robots that ran flat',off.flat,on.flat,v=>fmtN(v),'low')}${row('Cost per order (incl. AI software)',off.perOrder,on.perOrder,v=>fmtJ2(v),'low')}</table></div>
+  setMore('ai',`<h3>Is the AI worth it? ${SCENARIOS[scenKey].name}, same setup, same orders</h3><p class="note" style="margin-top:0"><b>Simple control</b>: 2 orders per picker trip, first-come-first-served, robots charge only when nearly empty. <b>AI</b>: bigger batches with shorter routes, smart slotting, deadline-based priority and predictive charging.</p><div style="overflow:auto"><table><tr><th></th><th class="num">Simple control</th><th class="num">With AI</th></tr>
+  ${row('Shipped on time',off.onTime,on.onTime,v=>v.toFixed(1)+'%','high')}${row('Average order-to-ship',off.avg,on.avg,v=>v.toFixed(0)+' min','low')}${row('Picker walking',off.walkKm,on.walkKm,v=>fmtN(v)+' km','low')}${row('Robots that ran flat',off.flat,on.flat,v=>fmtN(v),'low')}${row('Cost per order (incl. AI software)',off.perOrder,on.perOrder,v=>fmtJ2(v),'low')}</table></div>
   <div class="banner ${on.perOrder<off.perOrder?'':'warn'}" style="border-radius:12px">${on.perOrder<off.perOrder?`The AI pays off: about ${fmtJ(off.total-on.total)} a day saved and ${(on.onTime-off.onTime).toFixed(0)} points more orders on time.`:'On this day the AI costs more than it saves. Try a harder scenario: it works like insurance for bad days.'}</div>`);
   $('#exportAI').disabled=false;toast('AI comparison finished');
+}
+
+
+/* --- GO / REVISE / NO-GO decision --- */
+const FIX={normal:'This setup is sized for the peak: check it also works on normal days',power:'Install a backup generator for the robot zone',cyber:'Offline (paper) picking plan and stronger network security',breakdown:'Spare robots and a 4-hour repair contract with the supplier',staff:'A temporary-staff agency on call',white:'Hire temporary pickers and packers for peak days',ramadan:'A shift plan for the evening peak after iftar',supply:'Safety stock of top products (Aqaba delays)'};
+const FIXS={normal:'Check normal days',power:'⚡ Backup generator',cyber:'🔒 Offline plan + security',breakdown:'🔧 Spare robots',staff:'👷 Temp staff on call',white:'👷 Temp staff on call',ramadan:'🌙 Evening shift plan',supply:'📦 Safety stock'};
+function runVerdict(){
+  runOpt();const best=optBest,man=optRes&&optRes[0]&&optRes[0].pickers!==null?optRes[0]:null;
+  let cls,badge,title,why=[],conds=[],fails=[],passN=0,totN=0,yrsTxt='–';
+  if(!best){cls='no';badge='⛔ NO-GO';title='No setup meets the target';why.push(`Even with robots, fewer than ${targets.on}% of orders ship on time on “${SCENARIOS[scenKey].name}”.`,'Revise the plan first: more packers, a longer ship-within time, or a lower target.')}
+  else if(!best.stations){cls='no';badge='⛔ NO-GO';title='Don’t buy robots: people are cheaper here';why.push(`The cheapest way to meet ${targets.on}% on time is ${best.pickers} manual pickers, with no robots.`,'Robots cost more than they save with these wages and robot prices.','Re-check if wages rise, robot prices fall, or peak days become more frequent.')}
+  else{
+    const save=man?man.total-best.total:null,yrs=save>0?best.invest/(save*300):null;
+    const res=[];for(const [k,sc] of Object.entries(SCENARIOS)){const c={...DEFAULTS,seed:cfg.seed,robots:best.robots,stations:best.stations,pickers:best.pickers,packers:cfg.packers,coverage:cfg.coverage,ai:cfg.ai,batch:cfg.batch,...sc.cfg};if(sc.cfg.pickers)c.pickers=Math.max(best.pickers,sc.cfg.pickers);if(sc.cfg.packers)c.packers=Math.max(cfg.packers,sc.cfg.packers);res.push([k,meets(runFull(c,sc.mods,null))])}
+    fails=res.filter(r=>!r[1]).map(r=>r[0]);totN=res.length;passN=totN-fails.length;yrsTxt=yrs!==null?`~${yrs.toFixed(1)} years`:(save===null?'Only option':'Never');conds=fails.map(k=>`<b>${SCENARIOS[k].name}:</b> ${FIX[k]||'Plan a fallback'}`);
+    why.push(`<b>${best.robots} robots, ${best.stations} stations, ${best.pickers} pickers</b> is the cheapest setup that ships ≥${targets.on}% on time.`);
+    if(save!==null)why.push(save>0?`Saves about <b>${fmtJ(save)} a day</b> vs the best manual warehouse (${man.pickers} pickers); the ${fmtJ(best.invest)} investment pays back in about <b>${yrs.toFixed(1)} years</b>.`:`It costs <b>${fmtJ(-save)} a day more</b> than the best manual warehouse, so it never pays back.`);
+    else why.push('No manual warehouse can meet the target at all: robots are the only way.');
+    why.push(`Stress test: passes <b>${res.length-fails.length} of ${res.length}</b> scenarios${fails.length?'.':' (all of them).'}`);
+    const fast=yrs===null?(save===null):yrs<=3;
+    if(save!==null&&save<=0||yrs>5){cls='no';badge='⛔ NO-GO';title='The investment does not pay back fast enough'}
+    else if(fast&&!fails.length){cls='go';badge='✅ GO';title='Invest in robots'}
+    else{cls='rev';badge='🟡 GO WITH CONDITIONS';title=fails.length?'Invest, but prepare for the bad days':'Invest, but the payback is slow: negotiate a lower price'}
+    if(cls==='rev'&&!fails.length)conds=['Negotiate the robot price or a leasing deal to bring payback under 3 years'];
+  }
+  const g=$('#goBox');g.hidden=false;g.className='gobox '+cls;
+  const fixes=[...new Set(fails.map(k=>FIXS[k]||'Fallback plan'))];
+  const stats=best&&best.stations?[[`${best.robots} robots`,`${best.stations} stations · ${best.pickers} pickers`],[yrsTxt,'to pay back the investment'],[`${passN} of ${totN}`,'test days passed']]:null;
+  const bt=$('#goBtn');bt.className='gobtn '+cls;bt.innerHTML=`<b>${badge}</b><span>${title}</span>`;bt.title='Click to recalculate';
+  g.innerHTML=`<div class="go-title" style="margin:0 0 8px">${title}</div>`+
+   (stats?`<div class="go-stats">${stats.map(x=>`<div class="go-stat"><b>${x[0]}</b><span>${x[1]}</span></div>`).join('')}</div>`:'')+
+   (fixes.length?`<div class="go-fix"><b>Before buying:</b>${fixes.map(x=>`<i>${x}</i>`).join('')}</div>`:'')+
+   `<details class="go-why"><summary>Why? Show the details</summary><ul>${why.map(x=>`<li>${x}</li>`).join('')}</ul>${conds.length?`<div class="go-conds"><b>Conditions before buying:</b><ul>${conds.map(x=>`<li>${x}</li>`).join('')}</ul></div>`:''}<div class="go-note">Based on “${SCENARIOS[scenKey].name}”, target ${targets.on}% on time, and the model’s assumptions. GO ≤ 3-year payback and passes every test day · REVISE = pays back within 5 years but has risks to fix · NO-GO = no payback within 5 years or people are cheaper.</div></details>`;
+  toast('Decision: '+badge.replace(/^[^ ]+ /,''));
 }
 
 /* ============ Data ============ */
@@ -972,7 +1305,7 @@ function parseOrders(text){
   const head=lines[0].toLowerCase().split(',').map(s=>s.trim());const it=head.findIndex(h=>h.includes('time')),il=head.findIndex(h=>h.includes('line')||h.includes('item')),ie=head.findIndex(h=>h.includes('express')||h.includes('priority'));
   if(it<0)throw new Error('Need a "time" column.');const r=mulberry32(99);
   return lines.slice(1).map((l,i)=>{const c=l.split(',').map(x=>x.trim());const [hh,mm]=c[it].split(':').map(Number);const t=hh*60+(mm||0)-START;if(!(t>=0&&t<DAY))throw new Error(`Row ${i+2}: time must be between 08:00 and 21:59.`);
-    const n=il>=0?Math.max(1,Math.round(parseFloat(c[il])||1)):2;return {id:i+1,t,lines:n,express:ie>=0?['1','yes','true','y'].includes((c[ie]||'').toLowerCase()):false,zr:r(),oos:r()}});
+    const n=il>=0?Math.max(1,Math.round(parseFloat(c[il])||1)):2;return {id:i+1,t,lines:n,express:false,zr:r(),oos:r()}});
 }
 function loadCSV(t,n){try{imported=parseOrders(t);$('#csvStatus').innerHTML=`<span class="badge">ACTIVE</span> <b>${n}</b>: ${imported.length} real orders loaded.`;$('#clearCsv').disabled=false;resetSim();clearDecision();toast('Order log imported')}catch(e){$('#csvStatus').innerHTML=`<span style="color:var(--bad)">Import failed: ${e.message}</span>`}}
 function loadJSON(t,n){try{const o=JSON.parse(t),c=o.setup||o.config||o;let k=0;for(const key of Object.keys(DEFAULTS))if(key in c&&isFinite(+c[key])){cfg[key]=+c[key];k++}if(!k)throw new Error('No recognised settings.');if(o.scenario&&SCENARIOS[o.scenario]){scenKey=o.scenario;mods=JSON.parse(JSON.stringify(SCENARIOS[o.scenario].mods))}buildScenarios();syncControls();resetSim();clearDecision();$('#jsonStatus').innerHTML=`<span class="badge">LOADED</span> ${n}: ${k} settings applied.`;toast('Setup imported')}catch(e){$('#jsonStatus').innerHTML=`<span style="color:var(--bad)">Import failed: ${e.message}</span>`}}
@@ -981,7 +1314,7 @@ function wireDrop(z,inp,fn){inp.onchange=e=>{const f=e.target.files[0];if(f)f.te
 /* ============ Governance & prompt ============ */
 const GOV_A=[
   {n:'1. Need',c:'--blue',q:'Why robots rather than more pickers, a bigger warehouse, or outsourcing to a 3PL?',a:['Peak days (White Friday, Ramadan) overwhelm walking pickers; robots scale without hiring.','Picking mistakes cause returns and unhappy customers; robot stations are about 10× more accurate.','The simulator shows when, in Jordan’s labour market, more pickers are simply cheaper.']},
-  {n:'2. Value',c:'--text',q:'What time, cost or quality value is expected?',a:['More orders shipped on time, especially express orders.','Fewer mistakes and returns; no walking 10–15 km per shift for pickers.','Lower cost per order on busy days; measured against the best manual-only setup.']},
+  {n:'2. Value',c:'--text',q:'What time, cost or quality value is expected?',a:['More orders shipped on time, ready for the courier.','Fewer mistakes and returns; no walking 10–15 km per shift for pickers.','Lower cost per order on busy days; measured against the best manual-only setup.']},
   {n:'3. Authority & legality',c:'--warn',q:'Who approves the investment, the people changes and the data use?',a:['Board approves the investment; operations director owns the rollout.','Jordanian Labour Law: consult workers, retrain or redeploy before any job changes; Ministry of Labour rules on working conditions.','Worker productivity data handled under Jordan’s Personal Data Protection Law (2023); no hidden monitoring.']},
   {n:'4. Risk',c:'--bad',q:'Could failure injure people, stop operations or create security exposure?',a:['Robot–worker collisions: robot zone fenced off, workers only at stations (safety standard for driverless industrial trucks, ISO 3691-4).','A power cut or cyberattack stops every robot: backup generator, offline paper process, network security.','Dependence on one foreign supplier for spare parts and software, risky if regional conflict delays shipments.']},
   {n:'5. Readiness',c:'--ok',q:'Do we have the power, IT, skills and maintenance?',a:['Stable power with backup; strong Wi-Fi; a warehouse system that can talk to the robots.','Technicians trained by the supplier; station workers trained in a week.','A flat, clean floor and dense shelving for the robot zone.']},
@@ -991,10 +1324,10 @@ const GOV_A=[
 ];
 const GOV_B=[
   {n:'1. Need',c:'--blue',q:'Why do we need a live twin rather than a dashboard, simulation or analytics tool?',a:['Today a simulation is enough to decide whether to buy robots and how many.','A live twin is needed later, to rebalance staff and charge robots in real time.','A dashboard only shows the past; the twin tests “what if” before acting.']},
-  {n:'2. Value',c:'--text',q:'Which decisions improve, and how will we measure that value?',a:['Robots, stations and pickers; how many SKUs go to the robot zone; staffing for peak days.','Measured by: on-time %, express on-time %, mistakes, cost per order.','Value = savings vs the best manual-only setup (shown by the optimizer).']},
+  {n:'2. Value',c:'--text',q:'Which decisions improve, and how will we measure that value?',a:['Robots, stations and pickers; how many SKUs go to the robot zone; staffing for peak days.','Measured by: on-time %, mistakes, cost per order.','Value = savings vs the best manual-only setup (shown by the optimizer).']},
   {n:'3. Authority & legality',c:'--warn',q:'Who may collect the data, connect systems and authorise automated actions?',a:['Order and stock data: the warehouse system owner (IT).','Worker data only aggregated, under Jordan’s data protection law.','Only the shift manager may approve automated actions (e.g. stopping robots).']},
   {n:'4. Risk',c:'--bad',q:'What happens if the twin is wrong, unavailable, manipulated or over-trusted?',a:['Wrong demand forecast → too few staff on a peak day.','If the twin is down, managers use the standard staffing plan.','Manipulated data could hide a bottleneck: the twin advises; people check the floor.']},
-  {n:'5. Readiness',c:'--ok',q:'Are sensors, data quality, models, skills and integration mature enough?',a:['Need clean order logs (time, lines, express) and real picking times.','Robot telemetry from the supplier; staff scans from the warehouse system.','An analyst trained to run scenarios and explain results.']},
+  {n:'5. Readiness',c:'--ok',q:'Are sensors, data quality, models, skills and integration mature enough?',a:['Need clean order logs (time, lines) and real picking times.','Robot telemetry from the supplier; staff scans from the warehouse system.','An analyst trained to run scenarios and explain results.']},
   {n:'6. Standards & quality',c:'--blue',q:'How accurate, current and explainable must the twin be for each use case?',a:['Investment decision: picking times within ±15% of reality is enough.','Live control: data less than 1 minute old, with clear reasons.','All assumptions are listed on the About tab.']},
   {n:'7. Accountability',c:'--text',q:'Who owns the model, data, cyber controls and decisions based on it?',a:['Model owner: operations analytics. Data owner: IT.','Cyber controls: IT security.','Decision owner: operations director. The twin advises, a person decides.']},
   {n:'8. Monitoring & exit',c:'--warn',q:'How will drift, incidents, overrides, model updates and retirement be governed?',a:['Compare predicted vs real picking times monthly; recalibrate if the gap exceeds 15%.','Log every override of the twin’s recommendation, and why.','Version every model change; retire it when replaced by a live twin.']},
@@ -1006,23 +1339,23 @@ GOAL
 Build one self-contained HTML file (HTML + CSS + vanilla JavaScript, no libraries except Google Fonts) that simulates an e-commerce fulfilment centre in Amman, Jordan (fictional) implementing GOODS-TO-PERSON WAREHOUSE ROBOTS alongside manual pickers. It must answer: "Should we invest in robots, how many robots and pick stations, and how many workers do we redeploy?"
 
 MODEL (minute by minute, 08:00–22:00)
-- Online orders arrive at random (Poisson) with an hourly pattern; each has a number of lines (1–8) and an express flag.
+- Online orders arrive at random (Poisson) with an hourly pattern; each has a number of lines (1–8).
 - Each order's items are stored in the robot zone (share = coverage %) or the manual zone.
 - Robot zone: robots carry shelves to pick stations (1 worker each). Station time = 0.5 + lines × max(pick time, robot round trip ÷ robots serving the station); more robots per station adds traffic.
 - Manual zone: pickers walk; time = 0.5 + lines × (walk per line + 0.2). AI batch picking groups several orders per trip and cuts walking.
-- Packing: packers, 1 + 0.25 min per line. Order on time if shipped within the target (express: half).
+- Packing: packers, 1 + 0.25 min per line. Order on time if ready for the courier within the target (90 min).
 - Robot batteries drain while working and recharge in ~1 hour; without AI they can run flat in an aisle (rescue 30 min).
 - Mistakes: manual 0.5% of lines, stations 0.05%. Seeded random generator.
 
 VARIABLES
-Robots, stations, manual pickers, packers; AI on/off, coverage %, orders per picker trip; orders per day, express %, ship-within target; walk per line, robot speed, station pick time, battery hours; costs in JOD (worker position per day, robot and station price and lifetime, upkeep, AI software, mistake cost, late penalty).
+Shown to the user (Adjust setup): robots, stations, manual pickers, packers; AI on/off, coverage %, orders per picker trip; orders per day, ship-within target. Fixed model assumptions (not shown): walk per line, robot speed, station pick time, battery hours, and costs in JOD (worker position per day, robot and station price and lifetime, upkeep, AI software, mistake cost, late penalty), listed on the About page.
 
 SCENARIOS
 Normal day · White Friday (orders ×2.5) · Ramadan nights (evening peak, slower afternoon) · Robot breakdown (60% stopped 3 h) · Power cut (90 min) · Cyberattack (system offline 2 h, paper picking) · Regional supply delay (12% of orders wait 4 h for stock via Aqaba, demand +25%) · Staff shortage (25% off sick).
 
 OUTPUTS
 - Animated warehouse floor: robot zone with shelves, robots carrying shelves to stations, chargers; manual zone with pickers walking the aisles; packing stations; shipping dock.
-- KPI cards: shipped, average order-to-ship, on-time %, express on-time, mistakes, robots working/charging/down, picker walking km, cost per order, lines per worker-hour.
+- KPI cards: shipped, average order-to-ship, on-time %, mistakes, robots working/charging/down, picker walking km, cost per order, lines per worker-hour.
 - Charts: backlog and shipped over the day; orders picked per hour by zone; time breakdown (waiting, picking, packing).
 - BEFORE vs AFTER: manual only (same people, no robots) vs with robots.
 - Live recommendation, AI assistant suggestions, robot fleet battery panel, alerts, control-room buttons.
@@ -1033,10 +1366,10 @@ DECISION SUPPORT
 - Stress test across all scenarios.
 
 DATA
-- Import CSV order log (time, lines, express) and JSON setup; export order log, hourly summary, day summary JSON, setup JSON, event log, optimizer, stress and AI CSV/JSON; previews with Download and Copy.
+- Import CSV order log (time, lines) and JSON setup; export order log, hourly summary, day summary JSON, setup JSON, event log, optimizer, stress and AI CSV/JSON; previews with Download and Copy.
 
 DESIGN
-Modern scrolling story page, one idea per section: 01 Hook (question + scenario cards + one Run button) · 02 Watch the warehouse (live floor + playback) · 03 What the AI recommends (one suggestion at a time, with an Apply button) · 04 Robots vs people (before/after) · 05 So, should we invest? (optimizer, stress test, AI value) · 06 Dig deeper (charts + accordions). Sticky top bar with live status pill, a single Data button (import/export drawer) and Light/Dark toggle. Setup in a slide-in drawer. IBM Plex fonts, responsive.
+Single-screen operations dashboard: header (title, status pill, Data button, Light/Dark toggle); command bar (scenario picker, Run, +10 min, Run to end, Reset, speed, Adjust setup drawer, Test an event menu, clock); 4 KPI cards (on time, average order-to-ship, orders waiting, cost per order) with "show more metrics"; live warehouse floor with live race cards "with robots vs manual only (same team)" showing shipped, on time vs late, average time and mistakes; charts for backlog and orders picked per hour; Insights panel with tabs (AI suggestions with one-click actions, robot fleet batteries, events); bottom row: Before vs after table, Where does the order time go?, Should we invest? (optimizer, stress test, AI value). IBM Plex fonts, responsive.
 
 GOVERNANCE
 Two sets of 8 questions (Need, Value, Authority & legality, Risk, Readiness, Standards & quality, Accountability, Monitoring & exit): one for warehouse robots in Jordan (labour law and redeployment, worker safety, power and cyber risk, supplier dependence), one for the digital twin itself. Explain simulation vs digital twin.
@@ -1059,9 +1392,200 @@ function openInfo(kind){
 }
 function renderGov(){const G=govMode==='A'?GOV_A:GOV_B;$('#govGrid').innerHTML=G.map(g=>`<div class="gcard" style="--c:var(${g.c})"><h3>${g.n}</h3><div class="q">${g.q}</div><ul>${g.a.map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');$('#govA').classList.toggle('on',govMode==='A');$('#govB').classList.toggle('on',govMode==='B')}
 
+
+/* ============ Realistic 3D warehouse (own 3D projection, no libraries) ============ */
+let view3d=false;const W3={yaw:-30,zoom:1,open:0,target:0,spin:false,last:0};
+const hex2rgb=h=>{h=h.trim();if(h.startsWith('rgb')){const m=h.match(/[\d.]+/g).map(Number);return m.slice(0,3)}if(h.length===4)h='#'+h[1]+h[1]+h[2]+h[2]+h[3]+h[3];const n=parseInt(h.slice(1),16);return[n>>16&255,n>>8&255,n&255]};
+const rgbS=(c,f=1,a=1)=>`rgba(${Math.min(255,c[0]*f)|0},${Math.min(255,c[1]*f)|0},${Math.min(255,c[2]*f)|0},${a})`;
+function drawW3(){
+  const cv=$('#w3');if(!cv||!cv.clientWidth||!sim)return;{const want=String(cv.clientWidth<600?340:560);if(cv.dataset.h!==want)cv.dataset.h=want}const{ctx,w,h}=setupCanvas(cv);const nar=w<600;const now=performance.now()/1000;
+  const dark=document.documentElement.dataset.theme==='dark';
+  // ease open/close and auto-rotate
+  const dt=Math.min(.05,now-(W3.last||now));W3.last=now;W3.open+=(W3.target-W3.open)*Math.min(1,dt*3.2);if(W3.spin){W3.yaw+=dt*12;if(W3.yaw>180)W3.yaw-=360;$('#w3yaw').value=W3.yaw}
+  const C=n=>hex2rgb(css(n));
+  const col={floor:dark?[42,51,61]:[214,219,225],wall:dark?[60,72,86]:[226,230,236],roof:dark?[70,84,100]:[188,196,206],pod:dark?[150,120,80]:[205,170,115],podTop:dark?[120,150,170]:[120,160,190],rack:dark?[95,105,120]:[150,160,175],box:[196,150,95],robot:C('--robot'),warn:C('--warn'),bad:C('--bad'),muted:C('--muted'),bike:C('--bike'),ok:C('--ok'),table:dark?[110,95,80]:[180,150,120],truck:dark?[200,205,215]:[245,247,250],cab:C('--blue'),station:C('--robot')};
+  // world: building 62 x 38 (m); y grows toward the camera
+  const BX0=-1,BY0=-1,BX1=61,BY1=37,cx=30,cy=18,H=6;
+  const yaw=W3.yaw*Math.PI/180,cs=Math.cos(yaw),sn=Math.sin(yaw);
+  const rot=(x,y)=>{const dx=x-cx,dy=y-cy;return[dx*cs-dy*sn,dx*sn+dy*cs]};
+  const k30=Math.cos(Math.PI/6),s30=0.55;
+  // fit the building into the canvas
+  let mnx=1e9,mxx=-1e9,mny=1e9,mxy=-1e9;for(const [x,y] of [[BX0,BY0],[BX1,BY0],[BX1,BY1],[BX0,BY1]])for(const z of [0,H]){const[rx,ry]=rot(x,y);const X=(rx-ry)*k30,Y=(rx+ry)*s30-z;mnx=Math.min(mnx,X);mxx=Math.max(mxx,X);mny=Math.min(mny,Y);mxy=Math.max(mxy,Y)}
+  const S=Math.min((w-40)/(mxx-mnx),(h-60)/(mxy-mny))*W3.zoom,ox=w/2-(mnx+mxx)/2*S,oy=h/2-(mny+mxy)/2*S+10;
+  const P=(x,y,z)=>{const[rx,ry]=rot(x,y);return[ox+(rx-ry)*k30*S,oy+((rx+ry)*s30-z)*S]};
+  const depth=(x,y)=>{const[rx,ry]=rot(x,y);return rx+ry};
+  const poly=(pts,fill,stroke)=>{ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();ctx.fillStyle=fill;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=.6;ctx.stroke()}};
+  const L=[0.55,0.75];
+  function box(x,y,z,dx,dy,dz,c,a=1,topC){const x1=x+dx,y1=y+dy,z1=z+dz;
+    const faces=[[[x1,y],[x1,y1],[1,0]],[[x,y1],[x1,y1],[0,1]],[[x,y],[x,y1],[-1,0]],[[x,y],[x1,y],[0,-1]]];
+    for(const [a1,b1,n] of faces){const nr=[n[0]*cs-n[1]*sn,n[0]*sn+n[1]*cs];if(nr[0]+nr[1]<=0.001)continue;const f=0.62+0.28*Math.max(0,(nr[0]*0.3+nr[1]*0.95));
+      poly([P(a1[0],a1[1],z),P(b1[0],b1[1],z),P(b1[0],b1[1],z1),P(a1[0],a1[1],z1)],rgbS(c,f,a),a>0.6?rgbS(c,.5,a*.5):null)}
+    poly([P(x,y,z1),P(x1,y,z1),P(x1,y1,z1),P(x,y1,z1)],rgbS(topC||c,1.08,a),a>0.6?rgbS(c,.55,a*.5):null)}
+  function person(x,y,c,busy){const[px,py]=P(x,y,0);const u=S*0.55;ctx.fillStyle='rgba(0,0,0,.18)';ctx.beginPath();ctx.ellipse(px,py,u*.9,u*.45,0,0,7);ctx.fill();
+    ctx.fillStyle=rgbS(dark?[90,100,115]:[60,70,85]);ctx.fillRect(px-u*.35,py-u*1.2,u*.28,u*1.2);ctx.fillRect(px+u*.07,py-u*1.2,u*.28,u*1.2);
+    ctx.fillStyle=rgbS(c);ctx.beginPath();ctx.roundRect?ctx.roundRect(px-u*.55,py-u*2.5,u*1.1,u*1.4,u*.3):ctx.rect(px-u*.55,py-u*2.5,u*1.1,u*1.4);ctx.fill();
+    ctx.fillStyle=dark?'#e8c9a8':'#c99a74';ctx.beginPath();ctx.arc(px,py-u*2.95,u*.45,0,7);ctx.fill();
+    ctx.fillStyle=rgbS(c,.8);ctx.beginPath();ctx.arc(px,py-u*3.12,u*.47,Math.PI,0);ctx.fill()}
+  // background
+  ctx.clearRect(0,0,w,h);
+  // ground shadow + floor slab
+  const g=[P(BX0-2,BY0-2,-.01),P(BX1+2,BY0-2,-.01),P(BX1+2,BY1+2,-.01),P(BX0-2,BY1+2,-.01)];poly(g,dark?'rgba(0,0,0,.25)':'rgba(30,50,70,.10)');
+  box(BX0,BY0,-0.4,BX1-BX0,BY1-BY0,0.4,col.floor);
+  // painted zones
+  const zone=(x0,y0,x1,y1,c,a)=>poly([P(x0,y0,.01),P(x1,y0,.01),P(x1,y1,.01),P(x0,y1,.01)],rgbS(c,1,a));
+  zone(0,0,34,28,col.robot,.10);zone(36,0,59,22,col.bike,.08);zone(36,24,59,30,col.warn,.10);zone(0,32,60,36,col.ok,.14);
+  for(let yy=3;yy<26;yy+=2.4)zone(1,yy,3,yy+1.4,col.warn,.55); // charging pads
+  // layout
+  const cols=10,rows=5,pods=[];for(let r=0;r<rows;r++)for(let c=0;c<cols;c++)pods.push([5.5+c*2.8,2.5+r*3.6]);
+  const nS=Math.max(0,cfg.stations),stX=i=>5+(i+0.5)*28/Math.max(1,nS);
+  const sysOk=sim.system()==='ok',busySt=sim.stations.map((S,i)=>S.order?i:-1).filter(i=>i>=0);
+  const items=[]; // {d, draw}
+  const add=(x,y,fn,z=0)=>items.push({d:depth(x,y)+z*0.01,fn});
+  // robots
+  let wi=0,ci=0,pi=0;const carried=new Set();
+  for(const r of sim.robots){let x,y,st='idle',carry=false;
+    if(r.state==='charge'){x=2;y=3.7+ (ci%10)*2.4;ci++;st='charge'}
+    else if(r.state==='down'){const p=pods[hashN(r.id,7)%pods.length];x=p[0];y=p[1]+1.8;st='down'}
+    else if(r.state==='work'&&busySt.length&&sysOk){const si=busySt[wi%busySt.length];wi++;const T=6;const ph=((now/T)+r.id*0.37)%1;const cyc=Math.floor(now/T+r.id*0.37);const pidx=hashN(r.id,cyc)%pods.length;const p=pods[pidx];const sx=stX(si),sy=23;
+      const back=ph>=0.5,f=back?(1-ph)*2:ph*2;const lane=p[1]+1.8;
+      if(f<0.5){x=sx;y=sy-(sy-lane)*(f*2)}else{y=lane;x=sx+(p[0]-sx)*Math.min(1,(f-0.5)*2.1)}
+      if(f>0.96){x=p[0];y=p[1]}st='work';if(back&&f<0.96){carry=true;carried.add(pidx)}if(back&&f>=0.96)carried.add(pidx)}
+    else if(r.state==='work'){const p=pods[hashN(r.id,3)%pods.length];x=p[0];y=p[1]+1.8;st='work'}
+    else{x=6+(pi%14)*2;y=21.6+Math.floor(pi/14)*1.2;pi++}
+    const c=st==='charge'?col.warn:st==='down'?col.bad:st==='idle'?col.muted:col.robot;const X=x,Y=y,cr=carry;
+    add(X,Y,()=>{box(X-.55,Y-.55,0,1.1,1.1,.35,c,1);if(cr)box(X-.75,Y-.75,.42,1.5,1.5,2.0,col.pod,1,col.podTop)},1)}
+  // shelves (pods) not out with a robot
+  pods.forEach((p,i)=>{if(carried.has(i))return;add(p[0],p[1],()=>box(p[0]-.75,p[1]-.75,0,1.5,1.5,2.4,col.pod,1,col.podTop))});
+  // stations + workers
+  for(let i=0;i<nS;i++){const X=stX(i),busy=sim.stations[i]&&sim.stations[i].order;add(X,25,()=>box(X-1.3,24.2,0,2.6,1.6,1.0,busy?col.station:col.muted,1));add(X,27.3,()=>person(X,27.3,col.bike))}
+  // manual zone racks + pickers
+  for(let a=0;a<6;a++){const X=37.2+a*3.6;add(X+.6,10.5,()=>box(X,1,0,1.2,19,3.4,col.rack,1,dark?[130,140,155]:[185,195,208]))}
+  sim.pickers.forEach((pk,i)=>{let x,y;if(pk.batch.length){const a=hashN(pk.id,Math.floor(now/7+i*0.21))%6;const ph=(now/7+i*0.21)%1;x=37.2+a*3.6+2.4;y=2+18*(ph<0.5?ph*2:(1-ph)*2)}else{x=37+(i%10)*2.2;y=21.4}
+    const X=x,Y=y,c=pk.batch.length?col.bike:col.muted;add(X,Y,()=>person(X,Y,c))});
+  // packing tables + packers
+  const nK=sim.packers.length,kw=21/Math.max(1,nK);sim.packers.forEach((kp,i)=>{const X=37+(i+0.5)*kw;add(X,26,()=>box(X-Math.min(.9,kw*.4),25.4,0,Math.min(1.8,kw*.8),1.2,.9,col.table,1));if(kp.order)add(X,26,()=>box(X-.35,25.6,.9,.7,.7,.5,col.box,1),1);add(X,27.6,()=>person(X,27.6,kp.order?col.bike:col.muted))});
+  // dock: truck + parcels waiting
+  add(54,34.5,()=>{box(48,32.6,0,8.5,3.2,3.6,col.truck,1);box(56.6,32.9,0,2.8,2.6,2.6,col.cab,1)});
+  const nb=Math.min(12,Math.ceil(sim.qP.length/6));for(let b=0;b<nb;b++){const X=40+(b%6)*1,Y=31+Math.floor(b/6)*1;add(X,Y,()=>box(X,Y,0,.8,.8,.7,col.box,1))}
+  // walls (back walls first, front walls after the inside), roof last
+  const e=W3.open,wh=H*(1-e)+0.5*e,wa=1-e*0.15;
+  const walls=[{x:BX0,y:BY0,dx:BX1-BX0,dy:.4,n:[0,-1]},{x:BX0,y:BY1-.4,dx:BX1-BX0,dy:.4,n:[0,1],door:true},{x:BX0,y:BY0,dx:.4,dy:BY1-BY0,n:[-1,0]},{x:BX1-.4,y:BY0,dx:.4,dy:BY1-BY0,n:[1,0]}];
+  const isFront=n=>{const nr=[n[0]*cs-n[1]*sn,n[0]*sn+n[1]*cs];return nr[0]+nr[1]>0};
+  for(const W of walls)if(!isFront(W.n))box(W.x,W.y,0,W.dx,W.dy,wh,col.wall,wa);
+  items.sort((a,b)=>a.d-b.d).forEach(it=>it.fn());
+  for(const W of walls)if(isFront(W.n)){const fa=e>0.02?Math.max(0.12,1-e*1.1):1;box(W.x,W.y,0,W.dx,W.dy,wh,col.wall,fa);
+    if(W.door&&e<0.6){for(let d=0;d<3;d++){const x0=46+d*4.4;poly([P(x0,BY1+.01,0),P(x0+3.4,BY1+.01,0),P(x0+3.4,BY1+.01,Math.min(wh,4)),P(x0,BY1+.01,Math.min(wh,4))],rgbS(dark?[40,48,58]:[150,160,172],1,fa))}}}
+  // roof lifts away when the building opens
+  if(e<0.98){const rz=H+e*16,ra=Math.max(0,1-e*1.15);if(ra>0.02){box(BX0-.6,BY0-.6,rz,BX1-BX0+1.2,BY1-BY0+1.2,.6,col.roof,ra);
+    for(let k=1;k<6;k++){const yy=BY0+k*(BY1-BY0)/6;poly([P(BX0+3,yy-.8,rz+.62),P(BX1-3,yy-.8,rz+.62),P(BX1-3,yy+.8,rz+.62),P(BX0+3,yy+.8,rz+.62)],`rgba(150,200,235,${ra*.55})`)}}}
+  // labels when open
+  if(e>0.5){ctx.globalAlpha=Math.min(1,(e-.5)*2.5);const lab=(x,y,z,t,c)=>{const[px,py]=P(x,y,z);ctx.font='700 12px IBM Plex Sans, sans-serif';const tw=ctx.measureText(t).width;ctx.fillStyle=css('--panel');ctx.strokeStyle=c;ctx.lineWidth=1.5;ctx.beginPath();ctx.roundRect?ctx.roundRect(px-tw/2-8,py-11,tw+16,22,11):ctx.rect(px-tw/2-8,py-11,tw+16,22);ctx.fill();ctx.stroke();ctx.fillStyle=c;ctx.textAlign='center';ctx.fillText(t,px,py+4)};
+    lab(17,1,4.5,nar?`🤖 ${sim.qR.length}`:`🤖 Robot zone · ${sim.qR.length} waiting`,css('--robot'));lab(47,0.5,5.5,nar?`🚶 ${sim.qM.length}`:`🚶 Manual zone · ${sim.qM.length} waiting`,css('--bike'));lab(47,27,3,nar?`📦 ${sim.qP.length}`:`📦 Packing · ${sim.qP.length} waiting`,css('--warn'));lab(20,35,3.5,nar?`🚚 ${fmtN(sim.done.length)}`:`🚚 Dock · ${fmtN(sim.done.length)} shipped`,css('--ok'));ctx.globalAlpha=1}
+  // HUD
+  ctx.textAlign='left';ctx.fillStyle=css('--text');ctx.font='700 13px IBM Plex Sans, sans-serif';ctx.fillText(`${SCENARIOS[scenKey].name} · ${isDone()?'22:00':clockOf(sim.t)}${sysOk?'':' · '+sim.system().toUpperCase()}`,14,22);
+  ctx.font='12px IBM Plex Sans, sans-serif';ctx.fillStyle=css('--muted');if(!nar)ctx.fillText(e<0.5?'Closed building: press “Open the building” to look inside':'Live inside view: robots carry shelves to the stations',14,40);
+}
+let viewCU=false;
+function setView(v){view3d=v==='3d';viewCU=v==='cu';document.querySelectorAll('.vseg button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+  $('#floor').hidden=view3d||viewCU;$('#w3wrap').hidden=!view3d;$('#v3ctl').hidden=!view3d;
+  if(view3d){W3.open=0;W3.target=0;$('#w3open').textContent='⤢ Open the building';requestAnimationFrame(drawW3);setTimeout(()=>{if(view3d){W3.target=1;$('#w3open').textContent='⤡ Close the building'}},900)}else drawFloor()}
+function initF3(){
+  document.querySelectorAll('.vseg button').forEach(b=>b.onclick=()=>setView(b.dataset.v));
+  $('#w3open').onclick=()=>{W3.target=W3.target>0.5?0:1;$('#w3open').textContent=W3.target>0.5?'⤡ Close the building':'⤢ Open the building'};
+  $('#w3yaw').oninput=e=>{W3.yaw=+e.target.value};$('#w3zoom').oninput=e=>{W3.zoom=+e.target.value/100};
+  $('#w3spin').onclick=()=>{W3.spin=!W3.spin;$('#w3spin').classList.toggle('toggle',true);$('#w3spin').classList.toggle('on',W3.spin)};
+  {const cw=$('#cuwrap .cumain');let d=null;cw.addEventListener('pointerdown',e=>{d={x:e.clientX,y:CU.yaw};cw.setPointerCapture(e.pointerId)});cw.addEventListener('pointermove',e=>{if(d)CU.yaw=d.y+(e.clientX-d.x)*.4});cw.addEventListener('pointerup',()=>d=null);cw.addEventListener('pointercancel',()=>d=null)}
+  const wrap=$('#w3wrap');let drag=null;
+  wrap.addEventListener('pointerdown',e=>{drag={x:e.clientX,yaw:W3.yaw};wrap.setPointerCapture(e.pointerId)});
+  wrap.addEventListener('pointermove',e=>{if(!drag)return;W3.yaw=((drag.yaw+(e.clientX-drag.x)*0.4+540)%360)-180;$('#w3yaw').value=W3.yaw});
+  wrap.addEventListener('pointerup',()=>drag=null);wrap.addEventListener('pointercancel',()=>drag=null);
+  wrap.addEventListener('wheel',e=>{e.preventDefault();W3.zoom=Math.max(.7,Math.min(1.6,W3.zoom*(e.deltaY<0?1.08:0.93)));$('#w3zoom').value=W3.zoom*100},{passive:false});
+}
+
+/* ============ Close-up: robot, shelf and pick station ============ */
+const CU={yaw:-35,steps:[['Drive under the shelf','The robot rolls under a shelf (pod), following codes on the floor.'],['Lift it','It lifts the whole shelf a few centimetres off the floor.'],['Bring it to the station','It carries the shelf to the pick station, where a worker waits.'],['Pick with the light','A light shows which bin to pick from; the worker takes the item and puts it in the customer’s tote.'],['Take it back','The robot returns the shelf to storage, then goes for the next one or to charge.']]};
+function cuStepOf(ph){return ph<0.18?0:ph<0.26?1:ph<0.44?2:ph<0.66?3:4}
+function drawCU(){
+  const cv=$('#cu');if(!cv||!cv.clientWidth||!sim)return;{const want=String(cv.clientWidth<600?360:500);if(cv.dataset.h!==want)cv.dataset.h=want}
+  const{ctx,w,h}=setupCanvas(cv);const now=performance.now()/1000,dark=document.documentElement.dataset.theme==='dark';
+  const C=n=>hex2rgb(css(n));const robot=C('--robot'),warn=C('--warn'),bike=C('--bike'),ok=C('--ok'),muted=C('--muted');
+  const floor=dark?[42,51,61]:[220,224,230],pod=dark?[150,120,80]:[205,170,115],podTop=dark?[120,150,170]:[120,160,190],desk=dark?[95,105,120]:[170,180,195];
+  const cx=8,cy=6,yaw=CU.yaw*Math.PI/180,cs=Math.cos(yaw),sn=Math.sin(yaw),k30=Math.cos(Math.PI/6),s30=.55;
+  const rot=(x,y)=>{const dx=x-cx,dy=y-cy;return[dx*cs-dy*sn,dx*sn+dy*cs]};
+  let mnx=1e9,mxx=-1e9,mny=1e9,mxy=-1e9;for(const [x,y] of [[0,0],[16,0],[16,12],[0,12]])for(const z of [0,3.4]){const[rx,ry]=rot(x,y);const X=(rx-ry)*k30,Y=(rx+ry)*s30-z;mnx=Math.min(mnx,X);mxx=Math.max(mxx,X);mny=Math.min(mny,Y);mxy=Math.max(mxy,Y)}
+  const S=Math.min((w-30)/(mxx-mnx),(h-50)/(mxy-mny)),ox=w/2-(mnx+mxx)/2*S,oy=h/2-(mny+mxy)/2*S+12;
+  const P=(x,y,z)=>{const[rx,ry]=rot(x,y);return[ox+(rx-ry)*k30*S,oy+((rx+ry)*s30-z)*S]};
+  const depth=(x,y)=>{const[rx,ry]=rot(x,y);return rx+ry};
+  const poly=(pts,fill,stroke,lw=.7)=>{ctx.beginPath();pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=lw;ctx.stroke()}};
+  const faceVis=n=>{const nr=[n[0]*cs-n[1]*sn,n[0]*sn+n[1]*cs];return nr[0]+nr[1]>0.001?nr:null};
+  function box(x,y,z,dx,dy,dz,c,top,bins){const x1=x+dx,y1=y+dy,z1=z+dz;
+    for(const [a,b,n] of [[[x1,y],[x1,y1],[1,0]],[[x,y1],[x1,y1],[0,1]],[[x,y],[x,y1],[-1,0]],[[x,y],[x1,y],[0,-1]]]){const nr=faceVis(n);if(!nr)continue;const f=.62+.28*Math.max(0,nr[0]*.3+nr[1]*.95);
+      poly([P(a[0],a[1],z),P(b[0],b[1],z),P(b[0],b[1],z1),P(a[0],a[1],z1)],rgbS(c,f),rgbS(c,.5));
+      if(bins){const rowsN=4,colsN=3;for(let r=0;r<rowsN;r++)for(let q=0;q<colsN;q++){const u0=(q+.12)/colsN,u1=(q+.88)/colsN,v0=z+.25+r*(dz-.35)/rowsN,v1=v0+(dz-.35)/rowsN*.78;
+        const L=(u)=>[a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u];const p0=L(u0),p1=L(u1);const lit=bins.lit&&bins.face===n.join()&&r===bins.r&&q===bins.q;
+        poly([P(p0[0],p0[1],v0),P(p1[0],p1[1],v0),P(p1[0],p1[1],v1),P(p0[0],p0[1],v1)],lit?(Math.sin(now*10)>0?'rgba(255,214,10,.95)':'rgba(255,170,0,.7)'):rgbS([[90,140,200],[200,110,90],[110,170,120],[180,150,210]][(r+q)%4],f*.95,.85))}}}
+    poly([P(x,y,z1),P(x1,y,z1),P(x1,y1,z1),P(x,y1,z1)],rgbS(top||c,1.08),rgbS(c,.55))}
+  function person(x,y,c,reach){const[px,py]=P(x,y,0);const u=S*.28;ctx.fillStyle='rgba(0,0,0,.18)';ctx.beginPath();ctx.ellipse(px,py,u*.9,u*.45,0,0,7);ctx.fill();
+    ctx.fillStyle=dark?'#5a6475':'#3c4655';ctx.fillRect(px-u*.35,py-u*1.25,u*.28,u*1.25);ctx.fillRect(px+u*.07,py-u*1.25,u*.28,u*1.25);
+    ctx.fillStyle=rgbS(c);ctx.beginPath();ctx.roundRect?ctx.roundRect(px-u*.55,py-u*2.6,u*1.1,u*1.45,u*.3):ctx.rect(px-u*.55,py-u*2.6,u*1.1,u*1.45);ctx.fill();
+    ctx.strokeStyle=rgbS(c);ctx.lineWidth=u*.28;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(px+u*.45,py-u*2.3);ctx.lineTo(px+u*(reach?1.25:.6),py-u*(reach?2.9:1.5));ctx.stroke();
+    ctx.fillStyle=dark?'#e8c9a8':'#c99a74';ctx.beginPath();ctx.arc(px,py-u*3.05,u*.45,0,7);ctx.fill();ctx.fillStyle=rgbS(c,.8);ctx.beginPath();ctx.arc(px,py-u*3.22,u*.47,Math.PI,0);ctx.fill()}
+  function label(x,y,z,t,c){const[px,py]=P(x,y,z);ctx.font='700 12px IBM Plex Sans, sans-serif';const tw=ctx.measureText(t).width;ctx.strokeStyle=c;ctx.globalAlpha=.85;ctx.beginPath();ctx.moveTo(px,py);ctx.lineTo(px,py-26);ctx.stroke();ctx.globalAlpha=1;
+    ctx.fillStyle=css('--panel');ctx.lineWidth=1.4;ctx.beginPath();ctx.roundRect?ctx.roundRect(px-tw/2-8,py-48,tw+16,22,11):ctx.rect(px-tw/2-8,py-48,tw+16,22);ctx.fill();ctx.stroke();ctx.fillStyle=c;ctx.textAlign='center';ctx.fillText(t,px,py-33)}
+  ctx.clearRect(0,0,w,h);
+  // floor with codes
+  poly([P(-.5,-.5,0),P(16.5,-.5,0),P(16.5,12.5,0),P(-.5,12.5,0)],rgbS(floor),rgbS(floor,.8));
+  for(let gx=1;gx<16;gx+=1.5)for(let gy=1;gy<12;gy+=1.5){const c=P(gx,gy,0);ctx.fillStyle=dark?'rgba(255,255,255,.25)':'rgba(30,40,55,.28)';ctx.fillRect(c[0]-2,c[1]-1,4,2)}
+  poly([P(12.5,8.2,.01),P(15.5,8.2,.01),P(15.5,11.6,.01),P(12.5,11.6,.01)],rgbS(robot,1,.12)); // station area
+  for(let k=0;k<3;k++)poly([P(.6,8.4+k*1.1,.01),P(1.6,8.4+k*1.1,.01),P(1.6,9.2+k*1.1,.01),P(.6,9.2+k*1.1,.01)],rgbS(warn,1,.6)); // chargers
+  // cycle
+  const T=14,ph=(now/T)%1,step=cuStepOf(ph);
+  const home=[4.2,3.2],stop=[12.2,9.9],park=[4.2,6.0];
+  let rx,ry,lift=0;const lerp=(a,b,t)=>a+(b-a)*Math.max(0,Math.min(1,t));
+  if(ph<0.18){const t=ph/0.18;rx=lerp(park[0],home[0],t);ry=lerp(park[1],home[1],t)}
+  else if(ph<0.26){rx=home[0];ry=home[1];lift=(ph-0.18)/0.08}
+  else if(ph<0.44){const t=(ph-0.26)/0.18;lift=1;if(t<.5){rx=lerp(home[0],stop[0],t*2);ry=home[1]}else{rx=stop[0];ry=lerp(home[1],stop[1],(t-.5)*2)}}
+  else if(ph<0.66){rx=stop[0];ry=stop[1];lift=1}
+  else if(ph<0.9){const t=(ph-0.66)/0.24;lift=1;if(t<.5){rx=stop[0];ry=lerp(stop[1],home[1],t*2)}else{rx=lerp(stop[0],home[0],(t-.5)*2);ry=home[1]}}
+  else{rx=home[0];ry=home[1];lift=1-(ph-0.9)/0.1}
+  const picking=step===3,binSel={lit:picking,face:'1,0',r:1+Math.floor(now/T)%2,q:Math.floor(now/T)%3};
+  const items=[];const add=(x,y,fn)=>items.push({d:depth(x,y),fn});
+  const shelves=[[2,1.5],[4.2,1.5],[6.4,1.5],[2,3.8],[6.4,3.8],[2,6.1],[6.4,6.1],[8.6,1.5],[8.6,3.8]];
+  shelves.forEach(([x,y])=>add(x,y,()=>box(x-.7,y-.7,0,1.4,1.4,2.6,pod,podTop,{})));
+  // the moving robot + its shelf
+  // the shelf rests at its home spot until the robot is under it and lifts it
+  const carrying=ph>=0.18;
+  if(!carrying)add(home[0],home[1],()=>box(home[0]-.7,home[1]-.7,0,1.4,1.4,2.6,pod,podTop,{}));
+  add(rx,ry+(carrying?0:0.001),()=>{box(rx-.55,ry-.55,0,1.1,1.1,.32,robot);if(carrying){ctx.fillStyle='rgba(0,0,0,.15)';box(rx-.7,ry-.7,.1+lift*.18,1.4,1.4,2.6,pod,podTop,binSel)}});
+  // a second robot waiting in line at the station
+  add(9.8,9.9,()=>{box(9.25,9.35,0,1.1,1.1,.32,robot);box(9.1,9.2,.28,1.4,1.4,2.6,pod,podTop,{})});
+  // charging robot
+  add(1.1,10.0,()=>box(.55,9.45,0,1.1,1.1,.32,warn));
+  // station desk, screen, tote and worker
+  add(14.4,10.6,()=>{box(13.4,10.5,0,2,1,.95,desk);box(14.9,10.6,.95,.5,.08,.45,dark?[30,40,50]:[40,50,60]);box(13.6,10.6,.95,.7,.6,.35,[60,130,200])});
+  add(14.2,11.6,()=>person(14.2,11.7,bike,picking));
+  items.sort((a,b)=>a.d-b.d).forEach(i=>i.fn());
+  // floating item from bin to tote while picking
+  if(picking){const t=((ph-0.44)/0.22*2)%1;const a=P(stop[0]+.7,stop[1],1.3),b=P(13.95,10.9,1.4);const x=a[0]+(b[0]-a[0])*t,y=a[1]+(b[1]-a[1])*t-Math.sin(t*Math.PI)*30;ctx.fillStyle=rgbS(warn);ctx.fillRect(x-5,y-5,10,10)}
+  // labels
+  label(rx,ry,carrying?3.1:0.5,carrying?'🤖 Robot carrying the shelf':'🤖 Robot (drive unit)',css('--robot'));label(9.8,9.9,3.1,'⏳ Next robot waiting',css('--muted'));
+  label(6.4,1.5,2.8,'🗄 Shelf (pod): bins of products',dark?'#d8b47a':'#9a6a2a');
+  label(14.4,11,1.6,'👷 Pick station + worker',css('--bike'));
+  if(picking)label(stop[0]+.7,stop[1],2.2,'💡 Pick-to-light',css('--warn'));
+  label(1.1,10,0.5,'⚡ Charger',css('--warn'));
+  // caption
+  ctx.textAlign='left';ctx.fillStyle=css('--text');ctx.font='700 15px IBM Plex Sans, sans-serif';ctx.fillText(`Step ${step+1} of 5 · ${CU.steps[step][0]}`,14,24);
+  ctx.font='12.5px IBM Plex Sans, sans-serif';ctx.fillStyle=css('--muted');if(w>600)ctx.fillText(CU.steps[step][1],14,43);
+  // side panel
+  const el=$('#custeps');if(el){if(!el.children.length)el.innerHTML=CU.steps.map((s,i)=>`<div class="custep" data-i="${i}"><b>${i+1}</b><span><i>${s[0]}</i>${s[1]}</span></div>`).join('');
+    el.querySelectorAll('.custep').forEach(d=>d.classList.toggle('on',+d.dataset.i===step))}
+  if($('#culive')&&!$('#culive').hidden&&(!drawCU._t||now-drawCU._t>0.5)){drawCU._t=now;const cnt={work:0,charge:0,down:0,idle:0};sim.robots.forEach(r=>cnt[r.state]++);const bs=sim.stations.filter(x=>x.order).length;const k=sim.kpis();
+    $('#culive').innerHTML=`<h4>In the simulation right now · ${isDone()?'22:00':clockOf(sim.t)}</h4>🤖 <b>${cnt.work}</b> robots carrying shelves · <b>${cnt.charge}</b> charging · <b>${cnt.down}</b> broken · <b>${cnt.idle}</b> parked<br>👷 <b>${bs}</b> of ${cfg.stations} stations picking<br>📦 <b>${fmtN(sim.qR.length)}</b> orders waiting for a station<br>✅ <b>${fmtN(k.shipped)}</b> shipped · mistakes <b>${k.errors}</b>`}
+}
+
 /* ============ Wiring ============ */
 function setTheme(t){document.documentElement.dataset.theme=t;$('#themeBtn').textContent=t==='dark'?'☀️':'🌙';try{localStorage.setItem('wh-theme',t)}catch(e){}if(sim)render()}
-function wireTargets(){const a=$('#tOn'),b=$('#tUrg');if(!a)return;$('#vOn').textContent=targets.on+'%';$('#vUrg').textContent=targets.urg+'%';a.oninput=e=>{targets.on=+e.target.value;$('#vOn').textContent=targets.on+'%';render()};b.oninput=e=>{targets.urg=+e.target.value;$('#vUrg').textContent=targets.urg+'%'}}
+function wireTargets(){const a=$('#tOn');if(!a)return;$('#vOn').textContent=targets.on+'%';a.oninput=e=>{targets.on=+e.target.value;$('#vOn').textContent=targets.on+'%';render()}}
 const openDrawer=id=>$(id).classList.add('show'),closeDrawer=id=>$(id).classList.remove('show');
 function openSetup(){openDrawer('#setupBg')}
 function init(){
@@ -1074,35 +1598,40 @@ function init(){
   if(DASH){$('#scenSel').onchange=e=>applyScenario(e.target.value);
     $('#moreMetrics').onclick=()=>{const k=$('#kpis');k.hidden=!k.hidden;$('#moreMetrics').textContent=k.hidden?'Show more metrics ▾':'Hide more metrics ▴';render()};
     document.querySelectorAll('.itabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.itabs button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('.ipane').forEach(p=>p.classList.toggle('on',p.id==='p_'+b.dataset.t));render()})}
+  $('#aiToggle').onclick=()=>{cfg.ai=cfg.ai?0:1;syncControls();resetSim();clearDecision();toast(cfg.ai?'AI switched ON: smart batches, slotting, priority and charging':'AI switched OFF: simple rules only. Press Run to compare.')};
+  document.querySelectorAll('.cmpbar button').forEach(b=>b.onclick=()=>{cmpMode=b.dataset.m;document.querySelectorAll('.cmpbar button').forEach(x=>x.classList.toggle('on',x===b));resetSim();toast(cmpMode==='ai'?'Now comparing: same robots with the AI switched the other way':'Now comparing: manual warehouse with no robots')});
+  $('#heroSetup').onclick=openSetup;$('#introStart').onclick=()=>$('#scr1').scrollIntoView();
+  {const links=[...document.querySelectorAll('.snav a')];const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.dataset.s===e.target.id))})},{rootMargin:'-45% 0px -50% 0px'});['scr0','scr1','s2','scr3'].forEach(id=>io.observe(document.getElementById(id)))}
   $('#heroRun').onclick=()=>{if(!timer)run();$('#s2').scrollIntoView()};
   $('#setupBtn').onclick=openSetup;$('#setupClose').onclick=()=>closeDrawer('#setupBg');$('#setupBg').onclick=e=>{if(e.target.id==='setupBg')closeDrawer('#setupBg')};
   const openData=()=>openDrawer('#dataBg');$('#dataBtn').onclick=openData;$('#footData').onclick=openData;$('#dataClose').onclick=()=>closeDrawer('#dataBg');$('#dataBg').onclick=e=>{if(e.target.id==='dataBg')closeDrawer('#dataBg')};
-  $('#footGov').onclick=()=>openInfo('gov');$('#footAbout').onclick=()=>openInfo('about');$('#infoClose').onclick=()=>$('#infoModal').classList.remove('show');$('#infoModal').onclick=e=>{if(e.target.id==='infoModal')$('#infoModal').classList.remove('show')};
+  $('#footAbout').onclick=()=>openInfo('about');$('#infoClose').onclick=()=>$('#infoModal').classList.remove('show');$('#infoModal').onclick=e=>{if(e.target.id==='infoModal')$('#infoModal').classList.remove('show')};
   $('#seedIn').onchange=e=>{cfg.seed=Math.max(1,parseInt(e.target.value)||1);e.target.value=cfg.seed;resetSim();clearDecision()};
   $('#resetVars').onclick=()=>applyScenario(scenKey);
   $('#runBtn').onclick=()=>{if(timer){stop();render()}else run()};
   $('#stepBtn').onclick=()=>{stop();for(let i=0;i<10;i++)if(!sim.step())break;if(isDone())sim.finish();render()};
-  $('#endBtn').onclick=()=>{stop();while(sim.step());sim.finish();render();toast('Day finished: see the result below')};
+  $('#endBtn').onclick=()=>{stop();while(sim.step());sim.finish();render();toast('Day finished: see screen 3, Result & decision')};
   $('#resetBtn').onclick=resetSim;$('#speedSel').onchange=()=>{if(timer)run()};
   const act=m=>sim.alerts.push({t:sim.t,level:'cmd',msg:m}),closeMenu=()=>$('#eventMenu').removeAttribute('open');
-  $('#cmdPause').onclick=()=>{sim.manualStop=!sim.manualStop;act(sim.manualStop?'Control room: ALL ROBOTS STOPPED.':'Control room: robots restarted.');closeMenu();render()};
-  $('#cmdBreak').onclick=()=>{const n=sim.breakRobots(4,60);act(`Control room test: ${n} robots broken for 60 min.`);closeMenu();render()};
+  $('#cmdPause').onclick=()=>{sim.manualStop=!sim.manualStop;if(cmpMode==='ai')shadow.manualStop=sim.manualStop;act(sim.manualStop?'Control room: ALL ROBOTS STOPPED.':'Control room: robots restarted.');closeMenu();render()};
+  $('#cmdBreak').onclick=()=>{const n=sim.breakRobots(4,60);if(cmpMode==='ai')shadow.breakRobots(4,60);act(`Control room test: ${n} robots broken for 60 min.`);closeMenu();render()};
   $('#cmdTemp').onclick=()=>{sim.addPickers(3);shadow.addPickers(3);act('Control room: 3 temporary pickers called in (half-day cost).');closeMenu();render()};
-  $('#cmdRush').onclick=()=>{const r=mulberry32(sim.t+5);let id=sim.orders.length;const extra=[];for(let i=0;i<300;i++)extra.push({id:++id,t:sim.t+Math.floor(r()*30),lines:1+Math.floor(r()*3),express:r()<0.2,zr:r(),oos:1});
+  $('#cmdRush').onclick=()=>{const r=mulberry32(sim.t+5);let id=sim.orders.length;const extra=[];for(let i=0;i<300;i++)extra.push({id:++id,t:sim.t+Math.floor(r()*30),lines:1+Math.floor(r()*3),express:false,zr:r(),oos:1});
     for(const S of [sim,shadow]){extra.forEach(o=>S.orders.push({...o}));S.orders.sort((a,b)=>a.t-b.t);S.next=S.orders.findIndex(o=>o.t>=S.t&&o.pickStart===undefined&&o.avail===undefined);if(S.next<0)S.next=S.orders.length}act('Order spike: 300 extra orders in the next 30 minutes (a viral promotion).');closeMenu();render()};
   document.addEventListener('click',e=>{if(!$('#eventMenu').contains(e.target))closeMenu()});
   $('#aiPrev').onclick=()=>{aiIdx=(aiIdx-1+aiList.length)%aiList.length;renderAI(sim.kpis())};$('#aiNext').onclick=()=>{aiIdx=(aiIdx+1)%aiList.length;renderAI(sim.kpis())};
   $('#optBtn').onclick=()=>{if(optRes){clearDecision();return}$('#optSummary').innerHTML='<div class="decide-big">Testing 19 setups…</div><div class="decide-note">This takes a few seconds.</div>';setTimeout(runOpt,40)};
   $('#applyBest').onclick=()=>{if(!optBest)return;cfg.stations=optBest.stations;cfg.robots=optBest.robots;cfg.pickers=optBest.pickers;syncControls();resetSim();toast(`Applied: ${cfg.robots} robots, ${cfg.stations} stations, ${cfg.pickers} pickers`);$('#s2').scrollIntoView()};
+  $('#goBtn').onclick=()=>{const g=$('#goBox'),bt=$('#goBtn');bt.className='gobtn busy';bt.innerHTML='<b>⏳ Deciding…</b><span>testing 19 setups and 8 days</span>';g.className='gobox idle';g.innerHTML='Testing every setup and every kind of day…';setTimeout(runVerdict,40)};
   $('#stressBtn').onclick=()=>setTimeout(runStress,20);$('#aiBtn').onclick=runAI;
   const rr=o=>Object.fromEntries(Object.entries(o).map(([a,b])=>[a,typeof b==='number'?+b.toFixed(2):b]));
   $('#exportAI').onclick=()=>openExport('AI comparison','wh_ai_comparison.json',JSON.stringify({scenario:SCENARIOS[scenKey].name,setup:{robots:cfg.robots,stations:cfg.stations,pickers:cfg.pickers,packers:cfg.packers},simple_control:rr(aiRes.off),with_ai:rr(aiRes.on)},null,2),'application/json');
   $('#exportOpt').onclick=()=>openExport('Investment optimizer','wh_optimizer.csv',toCSV(optRes.map(r=>({stations:r.stations,robots:r.robots,pickers_needed:r.pickers===null?'not possible':r.pickers,on_time_pct:r.onTime!==undefined?r.onTime.toFixed(1):'',mistakes:r.errors??'',cost_per_order_jod:r.perOrder!==undefined?r.perOrder.toFixed(2):'',cost_per_day_jod:r.total!==undefined?r.total.toFixed(0):'',investment_jod:r.invest??''}))),'text/csv');
-  $('#exportStress').onclick=()=>openExport('Stress test','wh_stress_test.csv',toCSV(stressRes.map(r=>({scenario:r.scenario,on_time_pct:r.onTime.toFixed(1),express_on_time_pct:r.exOn.toFixed(1),mistakes:r.errors,cost_per_order_jod:r.perOrder.toFixed(2),manual_only_on_time_pct:r.baseOn.toFixed(1),manual_only_cost_per_order_jod:r.basePer.toFixed(2),meets_targets:meets(r)?'yes':'no'}))),'text/csv');
+  $('#exportStress').onclick=()=>openExport('Stress test','wh_stress_test.csv',toCSV(stressRes.map(r=>({scenario:r.scenario,on_time_pct:r.onTime.toFixed(1),mistakes:r.errors,cost_per_order_jod:r.perOrder.toFixed(2),manual_only_on_time_pct:r.baseOn.toFixed(1),manual_only_cost_per_order_jod:r.basePer.toFixed(2),meets_targets:meets(r)?'yes':'no'}))),'text/csv');
   wireDrop($('#dropCsv'),$('#csvFile'),loadCSV);wireDrop($('#dropJson'),$('#jsonFile'),loadJSON);
-  $('#sampleCsv').onclick=()=>openExport('Sample order log','warehouse_orders_sample.csv',toCSV(genOrders({...DEFAULTS,orders:400},{}).map(o=>({time:clockOf(o.t),lines:o.lines,express:o.express?1:0}))),'text/csv');
+  $('#sampleCsv').onclick=()=>openExport('Sample order log','warehouse_orders_sample.csv',toCSV(genOrders({...DEFAULTS,orders:400},{}).map(o=>({time:clockOf(o.t),lines:o.lines}))),'text/csv');
   $('#clearCsv').onclick=()=>{imported=null;$('#csvStatus').textContent='No order log loaded. Using randomly generated orders.';$('#clearCsv').disabled=true;resetSim();clearDecision();toast('Imported orders removed')};
-  $('#expLog').onclick=()=>{if(!sim.done.length){toast('Run the day first');return}openExport('Order log','wh_order_log.csv',toCSV(sim.done.map(o=>({order_id:o.id,received:clockOf(o.t),lines:o.lines,express:o.express?1:0,zone:o.zone,waited_for_stock:o.waitStock?1:0,wait_min:(o.pickStart-o.avail).toFixed(1),pick_min:(o.picked-o.pickStart).toFixed(1),pack_min:(o.shipped-o.picked).toFixed(1),total_min:o.mins,on_time:o.onTime?1:0}))),'text/csv')};
+  $('#expLog').onclick=()=>{if(!sim.done.length){toast('Run the day first');return}openExport('Order log','wh_order_log.csv',toCSV(sim.done.map(o=>({order_id:o.id,received:clockOf(o.t),lines:o.lines,zone:o.zone,waited_for_stock:o.waitStock?1:0,wait_min:(o.pickStart-o.avail).toFixed(1),pick_min:(o.picked-o.pickStart).toFixed(1),pack_min:(o.shipped-o.picked).toFixed(1),total_min:o.mins,on_time:o.onTime?1:0}))),'text/csv')};
   $('#expHour').onclick=()=>openExport('Hourly summary','wh_hourly.csv',toCSV(sim.hourly.map((b,i)=>({hour:pad(8+i)+':00',orders_in:b.in,picked_robot_zone:b.pickR,picked_manual_zone:b.pickM,shipped:b.shipped,late:b.late}))),'text/csv');
   $('#expSummary').onclick=()=>openExport('Day summary','wh_day_summary.json',JSON.stringify({warehouse:'E-commerce fulfilment centre, Amman (fictional, simulated)',generated:new Date().toISOString(),scenario:SCENARIOS[scenKey].name,simulated_until:clockOf(Math.min(sim.t,DAY-1)),imported_orders:!!imported,setup:cfg,targets,with_robots:rr(sim.kpis()),with_robots_full_day_forecast:rr(full),manual_only:rr(base)},null,2),'application/json');
   $('#expCfg').onclick=()=>openExport('Setup','wh_setup.json',JSON.stringify({scenario:scenKey,setup:cfg},null,2),'application/json');
@@ -1112,8 +1641,8 @@ function init(){
   document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if($('#modal').classList.contains('show'))$('#modal').classList.remove('show');else{$('#infoModal').classList.remove('show');closeDrawer('#setupBg');closeDrawer('#dataBg');closeMenu()}});
   document.querySelectorAll('.acc').forEach(d=>d.addEventListener('toggle',()=>{if(d.open&&sim)render()}));
   let rz;window.addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(()=>{if(sim)render()},120)});
-  const loop=()=>{if(sim){const r=$('#floor').getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)drawFloor()}requestAnimationFrame(loop)};requestAnimationFrame(loop);
-  resetSim();
+  const loop=()=>{if(sim){{const c=$('#cuwrap');if(c){const r=c.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)drawCU()}}const el=view3d?$('#w3wrap'):$('#floor');const r=el.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){if(view3d)drawW3();else drawFloor()}}requestAnimationFrame(loop)};requestAnimationFrame(loop);
+  initF3();resetSim();clearDecision();
 }
 init();
 
